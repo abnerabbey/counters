@@ -12,6 +12,12 @@
 		350AF6ED25E0365A0000F698 /* UIImage+Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350AF6EC25E0365A0000F698 /* UIImage+Badge.swift */; };
 		35868D2825E03F090028AF1D /* WelcomeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35868D2725E03F090028AF1D /* WelcomeViewPresenter.swift */; };
 		35EAFB7925CC9E3B00DCFE10 /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EAFB7825CC9E3B00DCFE10 /* Networking.m */; };
+		48D338972763C73D00DDC3E0 /* DependencyContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D338962763C73D00DDC3E0 /* DependencyContainerTests.swift */; };
+		48D3389B2763C7F700DDC3E0 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D3389A2763C7F700DDC3E0 /* DependencyContainer.swift */; };
+		48D3389E2763CC0200DDC3E0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D3389D2763CC0200DDC3E0 /* Coordinator.swift */; };
+		48D338A02763CC9300DDC3E0 /* MainCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D3389F2763CC9300DDC3E0 /* MainCoordinatorTests.swift */; };
+		48D338A22763CCD900DDC3E0 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D338A12763CCD900DDC3E0 /* MainCoordinator.swift */; };
+		48D338A42763DEB700DDC3E0 /* InitialFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D338A32763DEB700DDC3E0 /* InitialFactories.swift */; };
 		DE3EBACC25E048CE00DA1E0D /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3EBACB25E048CE00DA1E0D /* Button.swift */; };
 		DECA256C25CC8D4200851431 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA256B25CC8D4200851431 /* AppDelegate.swift */; };
 		DECA257025CC8D4200851431 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA256F25CC8D4200851431 /* WelcomeViewController.swift */; };
@@ -47,6 +53,12 @@
 		35EAFB7625CC9E3A00DCFE10 /* Counters-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Counters-Bridging-Header.h"; sourceTree = "<group>"; };
 		35EAFB7725CC9E3B00DCFE10 /* Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		35EAFB7825CC9E3B00DCFE10 /* Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
+		48D338962763C73D00DDC3E0 /* DependencyContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainerTests.swift; sourceTree = "<group>"; };
+		48D3389A2763C7F700DDC3E0 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		48D3389D2763CC0200DDC3E0 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		48D3389F2763CC9300DDC3E0 /* MainCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorTests.swift; sourceTree = "<group>"; };
+		48D338A12763CCD900DDC3E0 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		48D338A32763DEB700DDC3E0 /* InitialFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialFactories.swift; sourceTree = "<group>"; };
 		DE3EBACB25E048CE00DA1E0D /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		DECA256825CC8D4200851431 /* Counters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Counters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECA256B25CC8D4200851431 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +133,33 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		48D338982763C7B800DDC3E0 /* My Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				48D3389C2763CBE900DDC3E0 /* Coordinators */,
+				48D338992763C7D600DDC3E0 /* Factories */,
+			);
+			path = "My Implementation";
+			sourceTree = "<group>";
+		};
+		48D338992763C7D600DDC3E0 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				48D3389A2763C7F700DDC3E0 /* DependencyContainer.swift */,
+				48D338A32763DEB700DDC3E0 /* InitialFactories.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		48D3389C2763CBE900DDC3E0 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				48D3389D2763CC0200DDC3E0 /* Coordinator.swift */,
+				48D338A12763CCD900DDC3E0 /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 		DE3EBACA25E048C200DA1E0D /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +191,7 @@
 		DECA256A25CC8D4200851431 /* Counters */ = {
 			isa = PBXGroup;
 			children = (
+				48D338982763C7B800DDC3E0 /* My Implementation */,
 				DE3EBACA25E048C200DA1E0D /* UIComponents */,
 				DECA25AA25CC8FD600851431 /* Application */,
 				DECA25AC25CC900C00851431 /* Config */,
@@ -165,6 +205,8 @@
 			children = (
 				DECA258225CC8D4300851431 /* CountersTests.swift */,
 				DECA258425CC8D4300851431 /* Info.plist */,
+				48D338962763C73D00DDC3E0 /* DependencyContainerTests.swift */,
+				48D3389F2763CC9300DDC3E0 /* MainCoordinatorTests.swift */,
 			);
 			path = CountersTests;
 			sourceTree = "<group>";
@@ -368,11 +410,15 @@
 			files = (
 				35868D2825E03F090028AF1D /* WelcomeViewPresenter.swift in Sources */,
 				350AF6ED25E0365A0000F698 /* UIImage+Badge.swift in Sources */,
+				48D3389E2763CC0200DDC3E0 /* Coordinator.swift in Sources */,
 				DECA257025CC8D4200851431 /* WelcomeViewController.swift in Sources */,
 				DECA256C25CC8D4200851431 /* AppDelegate.swift in Sources */,
+				48D338A22763CCD900DDC3E0 /* MainCoordinator.swift in Sources */,
 				DE3EBACC25E048CE00DA1E0D /* Button.swift in Sources */,
+				48D338A42763DEB700DDC3E0 /* InitialFactories.swift in Sources */,
 				35EAFB7925CC9E3B00DCFE10 /* Networking.m in Sources */,
 				350AF6D925E02D5E0000F698 /* WelcomeView.swift in Sources */,
+				48D3389B2763C7F700DDC3E0 /* DependencyContainer.swift in Sources */,
 				350AF6E425E035840000F698 /* WelcomeFeatureView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,7 +427,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48D338972763C73D00DDC3E0 /* DependencyContainerTests.swift in Sources */,
 				DECA258325CC8D4300851431 /* CountersTests.swift in Sources */,
+				48D338A02763CC9300DDC3E0 /* MainCoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
