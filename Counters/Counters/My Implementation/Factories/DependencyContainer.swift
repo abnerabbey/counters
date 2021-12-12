@@ -10,14 +10,27 @@ import UIKit
 
 class DependencyContainer {
     
-    let mainCoordinator: Coordinator
+    private let window: UIWindow
     
     init(window: UIWindow) {
-        func makeMainCoordinator() -> Coordinator {
-            return MainCoordinator(window: window)
-        }
-        
-        self.mainCoordinator = makeMainCoordinator()
-        self.mainCoordinator.start()
+        self.window = window
+    }
+    
+    func makeMainCoordinator() -> MainCoordinator {
+        return MainCoordinator(window: window, dependecyContaier: self)
+    }
+}
+
+extension DependencyContainer: WelcomeViewFactory {
+    func makeWelcomeViewController() -> WelcomeViewController {
+        let presenter = WelcomeViewPresenter()
+        return WelcomeViewController(presenter: presenter)
+    }
+}
+
+extension DependencyContainer: MainCounterViewFactory {
+    func makeMainCounterViewModel() -> MainCounterViewModel {
+        let uiConfig = MainCounterViewModel.UIConfig(title: "Counters", background: UIColor(named: "Background")!)
+        return MainCounterViewModel(uiConfig: uiConfig)
     }
 }

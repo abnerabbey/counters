@@ -21,8 +21,12 @@ class DependencyContainerTests: XCTestCase {
         XCTAssertNotNil(sut)
     }
     
-    func test_containerHasCoordinator() {
-        XCTAssertNotNil(sut.mainCoordinator)
+    func test_containerCanMakeMainCoordinator() {
+        XCTAssertNotNil(sut.makeMainCoordinator())
+    }
+    
+    func test_containerCanMakeWelcomeViewController() {
+        XCTAssertNotNil(sut.makeWelcomeViewController)
     }
     
     override func tearDown() {

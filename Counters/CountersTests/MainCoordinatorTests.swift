@@ -11,10 +11,13 @@ import XCTest
 class MainCoordinatorTests: XCTestCase {
 
     var sut: MainCoordinator!
+    var dependencyContainer: DependencyContainer!
     
     override func setUp() {
         super.setUp()
-        sut = MainCoordinator(window: .init())
+        let window = UIWindow()
+        dependencyContainer = DependencyContainer(window: window)
+        sut = dependencyContainer.makeMainCoordinator()
     }
     
     func test_mainCoordinator_canInit() {
@@ -36,6 +39,7 @@ class MainCoordinatorTests: XCTestCase {
     
     override func tearDown() {
         super.tearDown()
+        dependencyContainer = nil
         sut = nil
     }
 

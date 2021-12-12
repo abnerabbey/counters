@@ -8,6 +8,11 @@
 import Foundation
 import UIKit
 
-protocol MainViewControllerFactory {
-    func makeMainViewController() -> UINavigationController
+protocol WelcomeViewFactory {
+    func makeWelcomeViewController() -> WelcomeViewController
+}
+
+protocol MainCounterViewFactory {
+    //func makeMainCounterViewController() -> MainCounterViewController
+    func makeMainCounterViewModel() -> MainCounterViewModel
 }

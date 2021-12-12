@@ -10,19 +10,26 @@ import UIKit
 
 class MainCoordinator: Coordinator {
     
-    var rootViewController: UINavigationController
+    var rootViewController: UIViewController
     var childCoordinators: [Coordinator] = []
     
     let window: UIWindow
     
-    init(window: UIWindow) {
+    private let dependencyContainer: DependencyContainer
+    
+    init(window: UIWindow, dependecyContaier: DependencyContainer) {
         self.window = window
-        rootViewController = UINavigationController()
+        self.dependencyContainer = dependecyContaier
+        rootViewController = UIViewController()
     }
     
     func start() {
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()
+        
+        let mainCounterVC = MainCounterViewController(factory: dependencyContainer)
+        let navigationController = UINavigationController(rootViewController: mainCounterVC)
+        rootViewController.addFullScreen(childViewController: navigationController)
     }
     
 }

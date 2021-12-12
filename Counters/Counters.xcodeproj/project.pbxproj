@@ -12,6 +12,11 @@
 		350AF6ED25E0365A0000F698 /* UIImage+Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350AF6EC25E0365A0000F698 /* UIImage+Badge.swift */; };
 		35868D2825E03F090028AF1D /* WelcomeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35868D2725E03F090028AF1D /* WelcomeViewPresenter.swift */; };
 		35EAFB7925CC9E3B00DCFE10 /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EAFB7825CC9E3B00DCFE10 /* Networking.m */; };
+		4847D02D27666A0600D5158A /* +UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847D02C27666A0600D5158A /* +UIViewController.swift */; };
+		4847D030276671E400D5158A /* MainCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847D02F276671E400D5158A /* MainCounterViewController.swift */; };
+		4847D0322766724F00D5158A /* MainCounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847D0312766724F00D5158A /* MainCounterViewModel.swift */; };
+		4847D036276692FC00D5158A /* MainCounterViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847D035276692FB00D5158A /* MainCounterViewControllerTests.swift */; };
+		4847D0382766984C00D5158A /* DependencyStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847D0372766984C00D5158A /* DependencyStub.swift */; };
 		48D338972763C73D00DDC3E0 /* DependencyContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D338962763C73D00DDC3E0 /* DependencyContainerTests.swift */; };
 		48D3389B2763C7F700DDC3E0 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D3389A2763C7F700DDC3E0 /* DependencyContainer.swift */; };
 		48D3389E2763CC0200DDC3E0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D3389D2763CC0200DDC3E0 /* Coordinator.swift */; };
@@ -53,6 +58,11 @@
 		35EAFB7625CC9E3A00DCFE10 /* Counters-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Counters-Bridging-Header.h"; sourceTree = "<group>"; };
 		35EAFB7725CC9E3B00DCFE10 /* Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		35EAFB7825CC9E3B00DCFE10 /* Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
+		4847D02C27666A0600D5158A /* +UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+UIViewController.swift"; sourceTree = "<group>"; };
+		4847D02F276671E400D5158A /* MainCounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCounterViewController.swift; sourceTree = "<group>"; };
+		4847D0312766724F00D5158A /* MainCounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCounterViewModel.swift; sourceTree = "<group>"; };
+		4847D035276692FB00D5158A /* MainCounterViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCounterViewControllerTests.swift; sourceTree = "<group>"; };
+		4847D0372766984C00D5158A /* DependencyStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyStub.swift; sourceTree = "<group>"; };
 		48D338962763C73D00DDC3E0 /* DependencyContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainerTests.swift; sourceTree = "<group>"; };
 		48D3389A2763C7F700DDC3E0 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		48D3389D2763CC0200DDC3E0 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -112,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				350AF6EC25E0365A0000F698 /* UIImage+Badge.swift */,
+				4847D02C27666A0600D5158A /* +UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -131,6 +142,15 @@
 				35EAFB7825CC9E3B00DCFE10 /* Networking.m */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		4847D02E2766717F00D5158A /* Main Counter View */ = {
+			isa = PBXGroup;
+			children = (
+				4847D02F276671E400D5158A /* MainCounterViewController.swift */,
+				4847D0312766724F00D5158A /* MainCounterViewModel.swift */,
+			);
+			path = "Main Counter View";
 			sourceTree = "<group>";
 		};
 		48D338982763C7B800DDC3E0 /* My Implementation */ = {
@@ -158,6 +178,13 @@
 				48D338A12763CCD900DDC3E0 /* MainCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		48D338A52763E89400DDC3E0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		DE3EBACA25E048C200DA1E0D /* UIComponents */ = {
@@ -207,6 +234,8 @@
 				DECA258425CC8D4300851431 /* Info.plist */,
 				48D338962763C73D00DDC3E0 /* DependencyContainerTests.swift */,
 				48D3389F2763CC9300DDC3E0 /* MainCoordinatorTests.swift */,
+				4847D035276692FB00D5158A /* MainCounterViewControllerTests.swift */,
+				4847D0372766984C00D5158A /* DependencyStub.swift */,
 			);
 			path = CountersTests;
 			sourceTree = "<group>";
@@ -223,6 +252,8 @@
 		DECA25AA25CC8FD600851431 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				4847D02E2766717F00D5158A /* Main Counter View */,
+				48D338A52763E89400DDC3E0 /* Main */,
 				35868D2F25E0522E0028AF1D /* Extensions */,
 				35EAFB7425CC9E0800DCFE10 /* Services */,
 				DECA25AE25CC908800851431 /* AppDelegate */,
@@ -409,11 +440,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				35868D2825E03F090028AF1D /* WelcomeViewPresenter.swift in Sources */,
+				4847D02D27666A0600D5158A /* +UIViewController.swift in Sources */,
+				4847D030276671E400D5158A /* MainCounterViewController.swift in Sources */,
 				350AF6ED25E0365A0000F698 /* UIImage+Badge.swift in Sources */,
 				48D3389E2763CC0200DDC3E0 /* Coordinator.swift in Sources */,
 				DECA257025CC8D4200851431 /* WelcomeViewController.swift in Sources */,
 				DECA256C25CC8D4200851431 /* AppDelegate.swift in Sources */,
 				48D338A22763CCD900DDC3E0 /* MainCoordinator.swift in Sources */,
+				4847D0322766724F00D5158A /* MainCounterViewModel.swift in Sources */,
 				DE3EBACC25E048CE00DA1E0D /* Button.swift in Sources */,
 				48D338A42763DEB700DDC3E0 /* InitialFactories.swift in Sources */,
 				35EAFB7925CC9E3B00DCFE10 /* Networking.m in Sources */,
@@ -429,6 +463,8 @@
 			files = (
 				48D338972763C73D00DDC3E0 /* DependencyContainerTests.swift in Sources */,
 				DECA258325CC8D4300851431 /* CountersTests.swift in Sources */,
+				4847D036276692FC00D5158A /* MainCounterViewControllerTests.swift in Sources */,
+				4847D0382766984C00D5158A /* DependencyStub.swift in Sources */,
 				48D338A02763CC9300DDC3E0 /* MainCoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
