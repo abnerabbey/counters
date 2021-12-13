@@ -22,6 +22,7 @@
 		4847D0402766A26E00D5158A /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847D03F2766A26E00D5158A /* ViewFactory.swift */; };
 		489019BD2767B65E00155A6C /* CreateItemViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489019BC2767B65E00155A6C /* CreateItemViewControllerTests.swift */; };
 		489019BF2767B6D500155A6C /* CreateItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489019BE2767B6D500155A6C /* CreateItemViewController.swift */; };
+		489019C12767C8EF00155A6C /* CreateItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489019C02767C8EF00155A6C /* CreateItemViewModel.swift */; };
 		48D338972763C73D00DDC3E0 /* DependencyContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D338962763C73D00DDC3E0 /* DependencyContainerTests.swift */; };
 		48D3389B2763C7F700DDC3E0 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D3389A2763C7F700DDC3E0 /* DependencyContainer.swift */; };
 		48D3389E2763CC0200DDC3E0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D3389D2763CC0200DDC3E0 /* Coordinator.swift */; };
@@ -73,6 +74,7 @@
 		4847D03F2766A26E00D5158A /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 		489019BC2767B65E00155A6C /* CreateItemViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemViewControllerTests.swift; sourceTree = "<group>"; };
 		489019BE2767B6D500155A6C /* CreateItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemViewController.swift; sourceTree = "<group>"; };
+		489019C02767C8EF00155A6C /* CreateItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemViewModel.swift; sourceTree = "<group>"; };
 		48D338962763C73D00DDC3E0 /* DependencyContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainerTests.swift; sourceTree = "<group>"; };
 		48D3389A2763C7F700DDC3E0 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		48D3389D2763CC0200DDC3E0 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				489019BE2767B6D500155A6C /* CreateItemViewController.swift */,
+				489019C02767C8EF00155A6C /* CreateItemViewModel.swift */,
 			);
 			path = "Create Item";
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				48D338A42763DEB700DDC3E0 /* InitialFactories.swift in Sources */,
 				35EAFB7925CC9E3B00DCFE10 /* Networking.m in Sources */,
 				4847D0402766A26E00D5158A /* ViewFactory.swift in Sources */,
+				489019C12767C8EF00155A6C /* CreateItemViewModel.swift in Sources */,
 				4847D03C27669D7600D5158A /* +UIView.swift in Sources */,
 				350AF6D925E02D5E0000F698 /* WelcomeView.swift in Sources */,
 				48D3389B2763C7F700DDC3E0 /* DependencyContainer.swift in Sources */,

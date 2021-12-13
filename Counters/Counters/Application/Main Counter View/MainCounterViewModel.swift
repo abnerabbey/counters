@@ -9,16 +9,16 @@ import Foundation
 import UIKit
 
 protocol MainCounterViewModelInterface {
-    var title: String { get }
-    var background: UIColor { get }
+    var title: String? { get }
+    var background: UIColor? { get }
     
 }
 
 struct MainCounterViewModel {
     
     struct UIConfig:  MainCounterViewModelInterface {
-        var title: String
-        var background: UIColor
+        var title: String?
+        var background: UIColor?
     }
     
     let uiConfig: MainCounterViewModelInterface

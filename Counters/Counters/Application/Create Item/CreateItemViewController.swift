@@ -9,14 +9,16 @@ import UIKit
 
 class CreateItemViewController: UIViewController {
     
-    let textFieldView: UIView = create {
+    private lazy var textFieldView: UIView = create {
         $0.backgroundColor = .systemBackground
         $0.layer.cornerRadius = 10
     }
     
-    let textField: UITextField = create {
-        $0.placeholder = "Cups of coffee"
+    private lazy var textField: UITextField = create {
+        $0.placeholder = viewModel?.uiConfig.placeholder
     }
+    
+    var viewModel: CreateItemViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +26,10 @@ class CreateItemViewController: UIViewController {
     }
     
     private func setupView() {
-        view.backgroundColor = UIColor(named: "Background")
-        title = "Hola"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: nil)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: nil, action: nil)
+        view.backgroundColor = viewModel?.uiConfig.background
+        title = viewModel?.uiConfig.title
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: viewModel?.uiConfig.leftButtonTitle, style: .plain, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: viewModel?.uiConfig.rightButtonTitle, style: .done, target: nil, action: nil)
         view.addSubview(textFieldView)
         textFieldView.addSubview(textField)
         textFieldView.anchor(top: view.topAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: nil, padding: UIEdgeInsets(top: 120, left: 16, bottom: 0, right: 16), size: CGSize(width: 0, height: 58))
