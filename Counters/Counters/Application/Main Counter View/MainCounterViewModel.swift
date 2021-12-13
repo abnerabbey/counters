@@ -11,7 +11,7 @@ import UIKit
 protocol MainCounterViewModelInterface {
     var title: String? { get }
     var background: UIColor? { get }
-    
+    var leftButtonTitle: String? { get }
 }
 
 struct MainCounterViewModel {
@@ -19,6 +19,7 @@ struct MainCounterViewModel {
     struct UIConfig:  MainCounterViewModelInterface {
         var title: String?
         var background: UIColor?
+        var leftButtonTitle: String?
     }
     
     let uiConfig: MainCounterViewModelInterface
