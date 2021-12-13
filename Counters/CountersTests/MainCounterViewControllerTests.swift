@@ -12,10 +12,13 @@ class MainCounterViewControllerTests: XCTestCase {
     var sut: MainCounterViewController!
     var dependencyStub: DependencyStub!
     
+    fileprivate var navigationController: UINavigationViewControllerStub!
+    
     override func setUp() {
         super.setUp()
         dependencyStub = DependencyStub()
         sut = MainCounterViewController(factory: dependencyStub)
+        navigationController = UINavigationViewControllerStub(rootViewController: sut)
     }
     
     func test_sutCanInit() {
@@ -30,6 +33,11 @@ class MainCounterViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.viewModel.uiConfig.title, "Counters")
     }
     
+    func test_viewControllerTitleIsCounters() {
+        sut.loadViewIfNeeded()
+        XCTAssertEqual(sut.title, "Counters")
+    }
+    
     
     
     override func tearDown() {
@@ -39,3 +47,6 @@ class MainCounterViewControllerTests: XCTestCase {
     }
 }
 
+private class UINavigationViewControllerStub: UINavigationController {
+    
+}
