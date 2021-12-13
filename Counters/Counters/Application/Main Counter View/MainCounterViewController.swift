@@ -49,8 +49,10 @@ class MainCounterViewController: UIViewController {
         view.showViewFullScreen(mainView)
         
         
-        mainView.configue(withViewModel: .init(title: "Title", description: "Description", buttonTitle: "Hola :)", action: { button in
-            print("Hola cuando se presiona el botón :)")
+        mainView.configue(withViewModel: .init(title: "Title", description: "Description", buttonTitle: "Hola :)", action: { [weak self] button in
+            let nv = UINavigationController(rootViewController: CreateItemViewController())
+            nv.modalPresentationStyle = .fullScreen
+            self?.present(nv, animated: true, completion: nil)
         }))
     }
     
