@@ -23,6 +23,7 @@
 		489019BD2767B65E00155A6C /* CreateItemViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489019BC2767B65E00155A6C /* CreateItemViewControllerTests.swift */; };
 		489019BF2767B6D500155A6C /* CreateItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489019BE2767B6D500155A6C /* CreateItemViewController.swift */; };
 		489019C12767C8EF00155A6C /* CreateItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489019C02767C8EF00155A6C /* CreateItemViewModel.swift */; };
+		489019C32767CC1E00155A6C /* CreateItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489019C22767CC1E00155A6C /* CreateItemViewModelTests.swift */; };
 		48D338972763C73D00DDC3E0 /* DependencyContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D338962763C73D00DDC3E0 /* DependencyContainerTests.swift */; };
 		48D3389B2763C7F700DDC3E0 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D3389A2763C7F700DDC3E0 /* DependencyContainer.swift */; };
 		48D3389E2763CC0200DDC3E0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D3389D2763CC0200DDC3E0 /* Coordinator.swift */; };
@@ -75,6 +76,7 @@
 		489019BC2767B65E00155A6C /* CreateItemViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemViewControllerTests.swift; sourceTree = "<group>"; };
 		489019BE2767B6D500155A6C /* CreateItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemViewController.swift; sourceTree = "<group>"; };
 		489019C02767C8EF00155A6C /* CreateItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemViewModel.swift; sourceTree = "<group>"; };
+		489019C22767CC1E00155A6C /* CreateItemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemViewModelTests.swift; sourceTree = "<group>"; };
 		48D338962763C73D00DDC3E0 /* DependencyContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainerTests.swift; sourceTree = "<group>"; };
 		48D3389A2763C7F700DDC3E0 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		48D3389D2763CC0200DDC3E0 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				4847D035276692FB00D5158A /* MainCounterViewControllerTests.swift */,
 				489019BC2767B65E00155A6C /* CreateItemViewControllerTests.swift */,
 				4847D0372766984C00D5158A /* DependencyStub.swift */,
+				489019C22767CC1E00155A6C /* CreateItemViewModelTests.swift */,
 			);
 			path = CountersTests;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				4847D036276692FC00D5158A /* MainCounterViewControllerTests.swift in Sources */,
 				4847D0382766984C00D5158A /* DependencyStub.swift in Sources */,
 				48D338A02763CC9300DDC3E0 /* MainCoordinatorTests.swift in Sources */,
+				489019C32767CC1E00155A6C /* CreateItemViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
