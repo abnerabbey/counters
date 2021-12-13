@@ -14,6 +14,13 @@ class MainResponseView: UIView {
     let descriptionLabel: UILabel = .withConfig(.init(font: UIFont.systemFont(ofSize: 17, weight: .regular), textColor: UIColor(named: "SecondaryText")!))
     let actionButton: Button = Button()
     
+    struct ViewModel {
+        let title: String
+        let description: String
+        let buttonTitle: String
+        let action: (UIButton) -> ()
+    }
+    
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
         setup()
@@ -31,10 +38,14 @@ class MainResponseView: UIView {
         
         titleLabel.textAlignment = .center
         descriptionLabel.textAlignment = .center
-        titleLabel.text = "Title! :)"
-        descriptionLabel.text = "I am a description :)"
-        actionButton.setTitle("I am a button", for: .normal)
         
+    }
+    
+    func configue(withViewModel viewModel: MainResponseView.ViewModel) {
+        titleLabel.text = viewModel.title
+        descriptionLabel.text = viewModel.description
+        actionButton.setTitle(viewModel.buttonTitle, for: .normal)
+        actionButton.addTarget(viewModel.action)
     }
     
 

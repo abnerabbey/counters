@@ -23,7 +23,7 @@ class MainCounterViewController: UIViewController {
     }
     
     let viewModel: MainCounterViewModel
-    let mainView = MainResponseView()
+    private let mainView = MainResponseView()
     
     init(factory: MainCounterViewFactory) {
         self.viewModel = factory.makeMainCounterViewModel()
@@ -45,8 +45,13 @@ class MainCounterViewController: UIViewController {
         
         view.addSubview(tableView)
         tableView.anchor(top: view.topAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: view.bottomAnchor)
-        view.addSubview(mainView)
-        mainView.anchor(top: view.topAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: view.bottomAnchor)
+        
+        view.showViewFullScreen(mainView)
+        
+        
+        mainView.configue(withViewModel: .init(title: "Title", description: "Description", buttonTitle: "Hola :)", action: { button in
+            print("Hola cuando se presiona el botón :)")
+        }))
     }
     
 }

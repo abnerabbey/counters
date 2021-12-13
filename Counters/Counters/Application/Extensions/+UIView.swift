@@ -14,6 +14,22 @@ public func create<T: NSObject>(_ setup: (T) -> ()) -> T {
     return obj
 }
 
+
+// MARK: - Subviews stuff
+extension UIView {
+    
+    func showViewFullScreen(_ view: UIView) {
+        addSubview(view)
+        view.anchor(top: topAnchor, leading: leadingAnchor, trailing: trailingAnchor, bottom: bottomAnchor)
+    }
+    
+    func removeSubview(_ view: UIView) {
+        view.removeFromSuperview()
+    }
+    
+}
+
+// MARK: - Auto alyout stuff
 extension UIView {
     
     func dimensionAnchors(height: NSLayoutDimension?, heightMultiplier: CGFloat = 1.0, width: NSLayoutDimension?, widthMultiplier: CGFloat = 1.0) {
