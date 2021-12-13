@@ -40,6 +40,7 @@ extension MainCoordinator: MainCounterViewNavigation {
     func navigate() {
         let createItemVC = CreateItemViewController()
         createItemVC.viewModel = CreateItemViewModel(uiConfig: CreateItemViewModel.UIConfig(title: "Create Count", background: UIColor(named: "Background")!, placeholder: "Type your count...", leftButtonTitle: "Cancel", rightButtonTitle: "Save"))
-        rootViewController.present(createItemVC, animated: true, completion: nil)
+        let nv = UINavigationController(rootViewController: createItemVC)
+        rootViewController.present(nv, animated: true, completion: nil)
     }
 }
