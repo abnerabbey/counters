@@ -16,3 +16,8 @@ protocol MainCounterViewFactory {
     //func makeMainCounterViewController() -> MainCounterViewController
     func makeMainCounterViewModel() -> MainCounterViewModel
 }
+
+protocol StorageRepositoryFactory {
+    
+    func makeStorageRepository() -> StorageInitRepository
+}

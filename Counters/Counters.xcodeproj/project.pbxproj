@@ -12,6 +12,9 @@
 		350AF6ED25E0365A0000F698 /* UIImage+Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350AF6EC25E0365A0000F698 /* UIImage+Badge.swift */; };
 		35868D2825E03F090028AF1D /* WelcomeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35868D2725E03F090028AF1D /* WelcomeViewPresenter.swift */; };
 		35EAFB7925CC9E3B00DCFE10 /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EAFB7825CC9E3B00DCFE10 /* Networking.m */; };
+		4838935127692B9700EEFEEA /* StorageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4838935027692B9700EEFEEA /* StorageRepository.swift */; };
+		4838935327692BF900EEFEEA /* DefaultsImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4838935227692BF900EEFEEA /* DefaultsImplementation.swift */; };
+		4838935627692E9100EEFEEA /* Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4838935527692E9100EEFEEA /* Initialization.swift */; };
 		4847D02D27666A0600D5158A /* +UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847D02C27666A0600D5158A /* +UIViewController.swift */; };
 		4847D030276671E400D5158A /* MainCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847D02F276671E400D5158A /* MainCounterViewController.swift */; };
 		4847D0322766724F00D5158A /* MainCounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847D0312766724F00D5158A /* MainCounterViewModel.swift */; };
@@ -65,6 +68,9 @@
 		35EAFB7625CC9E3A00DCFE10 /* Counters-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Counters-Bridging-Header.h"; sourceTree = "<group>"; };
 		35EAFB7725CC9E3B00DCFE10 /* Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		35EAFB7825CC9E3B00DCFE10 /* Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
+		4838935027692B9700EEFEEA /* StorageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageRepository.swift; sourceTree = "<group>"; };
+		4838935227692BF900EEFEEA /* DefaultsImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsImplementation.swift; sourceTree = "<group>"; };
+		4838935527692E9100EEFEEA /* Initialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initialization.swift; sourceTree = "<group>"; };
 		4847D02C27666A0600D5158A /* +UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+UIViewController.swift"; sourceTree = "<group>"; };
 		4847D02F276671E400D5158A /* MainCounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCounterViewController.swift; sourceTree = "<group>"; };
 		4847D0312766724F00D5158A /* MainCounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCounterViewModel.swift; sourceTree = "<group>"; };
@@ -146,6 +152,7 @@
 		35EAFB7425CC9E0800DCFE10 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4838934F27692ADD00EEFEEA /* Persistence */,
 				35EAFB7525CC9E1F00DCFE10 /* Networking */,
 			);
 			path = Services;
@@ -158,6 +165,23 @@
 				35EAFB7825CC9E3B00DCFE10 /* Networking.m */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		4838934F27692ADD00EEFEEA /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				4838935027692B9700EEFEEA /* StorageRepository.swift */,
+				4838935227692BF900EEFEEA /* DefaultsImplementation.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		4838935427692E8100EEFEEA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4838935527692E9100EEFEEA /* Initialization.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		4847D02E2766717F00D5158A /* Main Counter View */ = {
@@ -182,6 +206,7 @@
 		48D338982763C7B800DDC3E0 /* My Implementation */ = {
 			isa = PBXGroup;
 			children = (
+				4838935427692E8100EEFEEA /* Models */,
 				48D3389C2763CBE900DDC3E0 /* Coordinators */,
 				48D338992763C7D600DDC3E0 /* Factories */,
 			);
@@ -468,6 +493,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4838935127692B9700EEFEEA /* StorageRepository.swift in Sources */,
+				4838935327692BF900EEFEEA /* DefaultsImplementation.swift in Sources */,
 				489019BF2767B6D500155A6C /* CreateItemViewController.swift in Sources */,
 				35868D2825E03F090028AF1D /* WelcomeViewPresenter.swift in Sources */,
 				4847D02D27666A0600D5158A /* +UIViewController.swift in Sources */,
@@ -487,6 +514,7 @@
 				4847D03C27669D7600D5158A /* +UIView.swift in Sources */,
 				350AF6D925E02D5E0000F698 /* WelcomeView.swift in Sources */,
 				48D3389B2763C7F700DDC3E0 /* DependencyContainer.swift in Sources */,
+				4838935627692E9100EEFEEA /* Initialization.swift in Sources */,
 				350AF6E425E035840000F698 /* WelcomeFeatureView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

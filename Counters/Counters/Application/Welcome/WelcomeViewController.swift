@@ -10,10 +10,16 @@ protocol WelcomeViewControllerPresenter {
     var viewModel: WelcomeView.ViewModel { get }
 }
 
+protocol WelcomeViewControllerDelegate: AnyObject {
+    func didPressContinueButton()
+}
+
 class WelcomeViewController: UIViewController {
     private lazy var innerView = WelcomeView()
     
     private let presenter: WelcomeViewControllerPresenter
+    
+    weak var delegate: WelcomeViewControllerDelegate?
     
     init(presenter: WelcomeViewControllerPresenter) {
         self.presenter = presenter
@@ -33,6 +39,13 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         additionalSafeAreaInsets = Constants.additionalInsets
         innerView.configure(with: presenter.viewModel)
+        bindContinueButton()
+    }
+    
+    private func bindContinueButton() {
+        innerView.button.addTarget { [weak self] button in
+            self?.delegate?.didPressContinueButton()
+        }
     }
 }
 

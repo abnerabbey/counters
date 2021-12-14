@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class DependencyContainer {
+class DependencyContainer: StorageRepositoryFactory {
     
     private let window: UIWindow
     
@@ -18,6 +18,10 @@ class DependencyContainer {
     
     func makeMainCoordinator() -> MainCoordinator {
         return MainCoordinator(window: window, dependecyContaier: self)
+    }
+    
+    func makeStorageRepository() -> StorageInitRepository {
+        return DefaultsImplementation()
     }
 }
 
