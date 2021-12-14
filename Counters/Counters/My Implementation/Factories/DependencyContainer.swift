@@ -30,7 +30,7 @@ extension DependencyContainer: WelcomeViewFactory {
 
 extension DependencyContainer: MainCounterViewFactory {
     func makeMainCounterViewModel() -> MainCounterViewModel {
-        let uiConfig = MainCounterViewModel.UIConfig(title: "Counters", background: UIColor(named: "Background")!)
+        let uiConfig = MainCounterViewModel.UIConfig(title: "Counters", background: UIColor(named: "Background")!, leftButtonTitle: "Edit")
         return MainCounterViewModel(uiConfig: uiConfig)
     }
 }
