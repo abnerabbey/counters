@@ -61,7 +61,7 @@ class MainCounterViewController: UIViewController {
         view.addSubview(toolbar)
         toolbar.anchor(top: nil, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor)
         
-        //view.showViewFullScreen(mainView)
+        view.showViewFullScreen(mainView, bottomView: toolbar)
         
         
         mainView.configue(withViewModel: .init(title: "Title", description: "Description", buttonTitle: "Hola :)", action: { button in
