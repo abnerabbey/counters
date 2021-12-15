@@ -64,7 +64,7 @@ class MainCounterViewController: UIViewController {
         view.showViewFullScreen(mainView, bottomView: toolbar)
         
         
-        mainView.configue(withViewModel: .init(title: "Title", description: "Description", buttonTitle: "Hola :)", action: { button in
+        mainView.configue(withViewModel: .init(title: Localizables.MainViewActionEmpty.title.localized, description: Localizables.MainViewActionEmpty.description.localized, buttonTitle: Localizables.MainViewActionEmpty.buttonTitle.localized, action: { button in
         }))
     }
     
