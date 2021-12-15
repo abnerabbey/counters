@@ -27,6 +27,8 @@
 		489019BF2767B6D500155A6C /* CreateItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489019BE2767B6D500155A6C /* CreateItemViewController.swift */; };
 		489019C12767C8EF00155A6C /* CreateItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489019C02767C8EF00155A6C /* CreateItemViewModel.swift */; };
 		489019C32767CC1E00155A6C /* CreateItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489019C22767CC1E00155A6C /* CreateItemViewModelTests.swift */; };
+		48CEAB3F276A6D6F00DAAF01 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CEAB3E276A6D6F00DAAF01 /* Bindable.swift */; };
+		48CEAB41276A6F0F00DAAF01 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CEAB40276A6F0F00DAAF01 /* Observable.swift */; };
 		48D338972763C73D00DDC3E0 /* DependencyContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D338962763C73D00DDC3E0 /* DependencyContainerTests.swift */; };
 		48D3389B2763C7F700DDC3E0 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D3389A2763C7F700DDC3E0 /* DependencyContainer.swift */; };
 		48D3389E2763CC0200DDC3E0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D3389D2763CC0200DDC3E0 /* Coordinator.swift */; };
@@ -83,6 +85,8 @@
 		489019BE2767B6D500155A6C /* CreateItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemViewController.swift; sourceTree = "<group>"; };
 		489019C02767C8EF00155A6C /* CreateItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemViewModel.swift; sourceTree = "<group>"; };
 		489019C22767CC1E00155A6C /* CreateItemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemViewModelTests.swift; sourceTree = "<group>"; };
+		48CEAB3E276A6D6F00DAAF01 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		48CEAB40276A6F0F00DAAF01 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		48D338962763C73D00DDC3E0 /* DependencyContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainerTests.swift; sourceTree = "<group>"; };
 		48D3389A2763C7F700DDC3E0 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		48D3389D2763CC0200DDC3E0 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -203,9 +207,19 @@
 			path = "Create Item";
 			sourceTree = "<group>";
 		};
+		48CEAB3D276A6D6000DAAF01 /* Bindable */ = {
+			isa = PBXGroup;
+			children = (
+				48CEAB3E276A6D6F00DAAF01 /* Bindable.swift */,
+				48CEAB40276A6F0F00DAAF01 /* Observable.swift */,
+			);
+			path = Bindable;
+			sourceTree = "<group>";
+		};
 		48D338982763C7B800DDC3E0 /* My Implementation */ = {
 			isa = PBXGroup;
 			children = (
+				48CEAB3D276A6D6000DAAF01 /* Bindable */,
 				4838935427692E8100EEFEEA /* Models */,
 				48D3389C2763CBE900DDC3E0 /* Coordinators */,
 				48D338992763C7D600DDC3E0 /* Factories */,
@@ -495,6 +509,7 @@
 			files = (
 				4838935127692B9700EEFEEA /* StorageRepository.swift in Sources */,
 				4838935327692BF900EEFEEA /* DefaultsImplementation.swift in Sources */,
+				48CEAB3F276A6D6F00DAAF01 /* Bindable.swift in Sources */,
 				489019BF2767B6D500155A6C /* CreateItemViewController.swift in Sources */,
 				35868D2825E03F090028AF1D /* WelcomeViewPresenter.swift in Sources */,
 				4847D02D27666A0600D5158A /* +UIViewController.swift in Sources */,
@@ -503,6 +518,7 @@
 				48D3389E2763CC0200DDC3E0 /* Coordinator.swift in Sources */,
 				4847D03E27669FA800D5158A /* MainResponseView.swift in Sources */,
 				DECA257025CC8D4200851431 /* WelcomeViewController.swift in Sources */,
+				48CEAB41276A6F0F00DAAF01 /* Observable.swift in Sources */,
 				DECA256C25CC8D4200851431 /* AppDelegate.swift in Sources */,
 				48D338A22763CCD900DDC3E0 /* MainCoordinator.swift in Sources */,
 				4847D0322766724F00D5158A /* MainCounterViewModel.swift in Sources */,
