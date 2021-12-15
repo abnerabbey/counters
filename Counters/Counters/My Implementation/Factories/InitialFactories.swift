@@ -19,5 +19,5 @@ protocol MainCounterViewFactory {
 
 protocol StorageRepositoryFactory {
     
-    func makeStorageRepository() -> StorageInitRepository
+    func makeStorageRepository() -> AnyStorageInitRepository<FirstInit>
 }

@@ -20,8 +20,8 @@ class DependencyContainer: StorageRepositoryFactory {
         return MainCoordinator(window: window, dependecyContaier: self)
     }
     
-    func makeStorageRepository() -> StorageInitRepository {
-        return DefaultsImplementation()
+    func makeStorageRepository() -> AnyStorageInitRepository<FirstInit> {
+        return AnyStorageInitRepository(repository: DefaultsImplementation())
     }
 }
 

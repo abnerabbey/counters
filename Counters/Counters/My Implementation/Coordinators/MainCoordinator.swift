@@ -20,7 +20,7 @@ class MainCoordinator: Coordinator {
     let window: UIWindow
     
     private let dependencyContainer: DependencyContainer
-    private let storageInitRepository: StorageInitRepository
+    private let storageInitRepository: AnyStorageInitRepository<FirstInit>
     
     init(window: UIWindow, dependecyContaier: DependencyContainer) {
         self.window = window
