@@ -31,21 +31,17 @@ class MainCoordinator: Coordinator {
     
     func start() {
         window.rootViewController = rootViewController
-        window.makeKeyAndVisible()
-        
         storageInitRepository.read(withKey: Constants.hasStartedBefore) { started in
-            guard let started = started as? Bool else { return }
             DispatchQueue.main.async {
-                if started {
+                if started.hasStarted {
                     self.presentMainCounterVC()
                 } else {
                     self.presentWelcomeVC()
-                    self.storageInitRepository.write(true, withKey: Constants.hasStartedBefore)
+                    self.storageInitRepository.write(.init(hasStarted: true), withKey: Constants.hasStartedBefore)
                 }
             }
         }
-        
-        
+        window.makeKeyAndVisible()
     }
     
     private func presentMainCounterVC() {

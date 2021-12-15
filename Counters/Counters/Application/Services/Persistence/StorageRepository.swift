@@ -12,7 +12,11 @@ enum StorageError: Error {
     case notExistingData
 }
 
+public struct FirstInit: Codable {
+    var hasStarted: Bool = false
+}
+
 protocol StorageInitRepository {
-    func read(withKey key: String, handler: @escaping (Any?) -> ())
-    func write(_ object: Any, withKey key: String)
+    func read(withKey key: String, handler: @escaping (FirstInit) -> ())
+    func write(_ object: FirstInit, withKey key: String)
 }

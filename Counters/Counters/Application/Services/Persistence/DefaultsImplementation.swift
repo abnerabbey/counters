@@ -7,27 +7,30 @@
 
 import Foundation
 
+
+
 struct DefaultsImplementation: StorageInitRepository {
+    
+    typealias Object = FirstInit
     
     let defaults = UserDefaults.standard
     let queue = DispatchQueue(label: "com.Counters.storageQueue")
     
-    func read(withKey key: String, handler: @escaping (Any?) -> ()) {
+    func read(withKey key: String, handler: @escaping (FirstInit) -> ()) {
         queue.async {
-            guard let value = defaults.object(forKey: key) as? Bool else {
-                handler(false)
+            guard let data = defaults.data(forKey: key), let value = try? JSONDecoder().decode(Object.self, from: data) else {
+                handler(FirstInit())
                 return
             }
-            
-            if value {
-                handler(true)
-            } else {
-                handler(false)
-            }
+            handler(value)
         }
     }
     
-    func write(_ object: Any, withKey key: String) {
-        defaults.setValue(object, forKey: key)
+    func write(_ object: FirstInit, withKey key: String) {
+        queue.async {
+            let data = try? JSONEncoder().encode(object)
+            defaults.setValue(data, forKey: key)
+        }
     }
+
 }
