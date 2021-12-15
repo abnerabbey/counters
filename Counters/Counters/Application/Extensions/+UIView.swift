@@ -18,9 +18,9 @@ public func create<T: NSObject>(_ setup: (T) -> ()) -> T {
 // MARK: - Subviews stuff
 extension UIView {
     
-    func showViewFullScreen(_ view: UIView) {
+    func showViewFullScreen(_ view: UIView, bottomView: UIView? = nil) {
         addSubview(view)
-        view.anchor(top: topAnchor, leading: leadingAnchor, trailing: trailingAnchor, bottom: bottomAnchor)
+        view.anchor(top: topAnchor, leading: leadingAnchor, trailing: trailingAnchor, bottom: bottomView?.topAnchor ?? bottomAnchor)
     }
     
     func removeSubview(_ view: UIView) {
