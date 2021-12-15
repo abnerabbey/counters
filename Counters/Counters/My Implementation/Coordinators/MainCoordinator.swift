@@ -66,6 +66,7 @@ extension MainCoordinator: MainCounterViewNavigation {
         let createItemVC = CreateItemViewController()
         createItemVC.viewModel = CreateItemViewModel(uiConfig: CreateItemViewModel.UIConfig(title: "Create Count", background: UIColor(named: "Background")!, placeholder: "Type your count...", leftButtonTitle: "Cancel", rightButtonTitle: "Save"))
         let nv = UINavigationController(rootViewController: createItemVC)
+        nv.modalPresentationStyle = .fullScreen
         rootViewController.present(nv, animated: true, completion: nil)
     }
 }
