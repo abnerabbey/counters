@@ -52,6 +52,7 @@ class MainCounterViewController: UIViewController {
         view.backgroundColor = viewModel.uiConfig.background
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
+        tableView.register(CountCell.self, forCellReuseIdentifier: "countCell")
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: viewModel.uiConfig.leftButtonTitle, style: .plain, target: self, action: nil)
         
@@ -61,7 +62,7 @@ class MainCounterViewController: UIViewController {
         view.addSubview(toolbar)
         toolbar.anchor(top: nil, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor)
         
-        view.showViewFullScreen(mainView, bottomView: toolbar)
+        //view.showViewFullScreen(mainView, bottomView: toolbar)
         
         
         mainView.configue(withViewModel: .init(title: Localizables.MainViewActionEmpty.title.localized, description: Localizables.MainViewActionEmpty.description.localized, buttonTitle: Localizables.MainViewActionEmpty.buttonTitle.localized, action: { [weak self] button in
