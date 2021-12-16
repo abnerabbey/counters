@@ -32,7 +32,9 @@ class MainResponseView: UIView {
         addSubview(actionButton)
         
         titleLabel.centerAnchors(centerX: centerXAnchor, centerY: centerYAnchor)
-        descriptionLabel.anchor(top: titleLabel.bottomAnchor, leading: titleLabel.leadingAnchor, trailing: titleLabel.trailingAnchor, bottom: nil, padding: UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0))
+        titleLabel.anchor(top: nil, leading: leadingAnchor, trailing: trailingAnchor, bottom: nil, padding: UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8))
+        descriptionLabel.anchor(top: titleLabel.bottomAnchor, leading: leadingAnchor, trailing: trailingAnchor, bottom: nil, padding: UIEdgeInsets(top: 8, left: 8, bottom: 0, right: 8))
+        descriptionLabel.numberOfLines = 0
         actionButton.anchor(top: descriptionLabel.bottomAnchor, leading: nil, trailing: nil, bottom: nil, padding: UIEdgeInsets(top: 32, left: 0, bottom: 0, right: 0), size: CGSize(width: 200, height: 44))
         actionButton.centerAnchors(centerX: centerXAnchor, centerY: nil)
         

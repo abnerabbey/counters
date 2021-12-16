@@ -34,7 +34,7 @@ extension DependencyContainer: WelcomeViewFactory {
 
 extension DependencyContainer: MainCounterViewFactory {
     func makeMainCounterViewModel() -> MainCounterViewModel {
-        let uiConfig = MainCounterViewModel.UIConfig(title: "Counters", background: UIColor(named: "Background")!, leftButtonTitle: "Edit")
+        let uiConfig = MainCounterViewModel.UIConfig(title: Localizables.MainView.title.localized, background: UIColor(named: "Background")!, leftButtonTitle: Localizables.MainView.main_edit_button.localized)
         return MainCounterViewModel(uiConfig: uiConfig)
     }
 }
