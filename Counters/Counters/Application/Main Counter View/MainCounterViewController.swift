@@ -53,6 +53,7 @@ class MainCounterViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
         tableView.register(CountCell.self, forCellReuseIdentifier: "countCell")
+        tableView.separatorColor = .clear
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: viewModel.uiConfig.leftButtonTitle, style: .plain, target: self, action: nil)
         

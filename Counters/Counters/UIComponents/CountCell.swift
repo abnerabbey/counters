@@ -38,7 +38,7 @@ class CountCell: UITableViewCell {
         titleLabel.text = "Cups of coffee"
         countLabel.textAlignment = .right
         
-        containerView.anchor(top: topAnchor, leading: leadingAnchor, trailing: trailingAnchor, bottom: bottomAnchor, padding: UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12))
+        containerView.anchor(top: topAnchor, leading: leadingAnchor, trailing: trailingAnchor, bottom: bottomAnchor, padding: UIEdgeInsets(top: 4, left: 12, bottom: 4, right: 12))
         countLabel.anchor(top: containerView.topAnchor, leading: containerView.leadingAnchor, trailing: nil, bottom: nil, padding: UIEdgeInsets(top: 8, left: 4, bottom: 0, right: 0), size: CGSize(width: 50, height: 0))
         separatorView.anchor(top: containerView.topAnchor, leading: countLabel.trailingAnchor, trailing: nil, bottom: containerView.bottomAnchor, padding: UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 0), size: CGSize(width: 3, height: 0))
         titleLabel.anchor(top: countLabel.topAnchor, leading: separatorView.trailingAnchor, trailing: containerView.trailingAnchor, bottom: nil, padding: UIEdgeInsets(top: 6, left: 8, bottom: 0, right: 4))
