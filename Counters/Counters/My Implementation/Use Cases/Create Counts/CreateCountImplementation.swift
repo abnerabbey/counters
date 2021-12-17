@@ -22,7 +22,7 @@ struct CreateCountImplementation: CreateCountUseCase {
         self.network = network
     }
     
-    func createCount(withTitle title: String?, completion: @escaping (Result<[Count], Error>) -> ()) {
+    func createCount(withTitle title: String?, completion: @escaping (Result<Count, Error>) -> ()) {
         guard let title = title, title.count > 0 else {
             completion(.failure(CreateItemError.noText))
             return
@@ -37,8 +37,8 @@ struct CreateCountImplementation: CreateCountUseCase {
                 return
             }
             
-            if let counts = try? JSONDecoder().decode([Count].self, from: data) {
-                completion(.success(counts))
+            if let counts = try? JSONDecoder().decode([Count].self, from: data), let count = counts.last {
+                completion(.success(count))
                 return
             } else {
                 completion(.failure(CreateItemError.invalidParse))

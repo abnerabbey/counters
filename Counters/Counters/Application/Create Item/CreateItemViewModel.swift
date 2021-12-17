@@ -42,8 +42,8 @@ class CreateItemViewModel {
         createItemUseCase.createCount(withTitle: title) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
-                case .success(let counts):
-                    self?.counterCreated.onNext(counts.last)
+                case .success(let count):
+                    self?.counterCreated.onNext(count)
                     self?.state.onNext(.success)
                 case.failure(let error):
                     self?.state.onNext(.failure(error))
