@@ -30,6 +30,7 @@ class CreateItemViewModel {
     private let createItemUseCase: CreateCountUseCase
     
     var state: Observable<FetchState> = Observable(nil)
+    var counterCreated: Observable<Count> = Observable(nil)
     
     init(uiConfig: CreateItemInterface, createItemUseCase: CreateCountUseCase) {
         self.uiConfig = uiConfig
@@ -42,6 +43,7 @@ class CreateItemViewModel {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let counts):
+                    self?.counterCreated.onNext(counts.last)
                     self?.state.onNext(.success)
                 case.failure(let error):
                     self?.state.onNext(.failure(error))
