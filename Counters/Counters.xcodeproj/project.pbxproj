@@ -27,6 +27,7 @@
 		489019BF2767B6D500155A6C /* CreateItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489019BE2767B6D500155A6C /* CreateItemViewController.swift */; };
 		489019C12767C8EF00155A6C /* CreateItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489019C02767C8EF00155A6C /* CreateItemViewModel.swift */; };
 		489019C32767CC1E00155A6C /* CreateItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489019C22767CC1E00155A6C /* CreateItemViewModelTests.swift */; };
+		48BD630D276D01450052F80C /* FetchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BD630C276D01450052F80C /* FetchState.swift */; };
 		48CEAB3F276A6D6F00DAAF01 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CEAB3E276A6D6F00DAAF01 /* Bindable.swift */; };
 		48CEAB41276A6F0F00DAAF01 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CEAB40276A6F0F00DAAF01 /* Observable.swift */; };
 		48CEAB43276A7F5F00DAAF01 /* +String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CEAB42276A7F5F00DAAF01 /* +String.swift */; };
@@ -96,6 +97,7 @@
 		489019BE2767B6D500155A6C /* CreateItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemViewController.swift; sourceTree = "<group>"; };
 		489019C02767C8EF00155A6C /* CreateItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemViewModel.swift; sourceTree = "<group>"; };
 		489019C22767CC1E00155A6C /* CreateItemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemViewModelTests.swift; sourceTree = "<group>"; };
+		48BD630C276D01450052F80C /* FetchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchState.swift; sourceTree = "<group>"; };
 		48CEAB3E276A6D6F00DAAF01 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		48CEAB40276A6F0F00DAAF01 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		48CEAB42276A7F5F00DAAF01 /* +String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+String.swift"; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			children = (
 				48CEAB3E276A6D6F00DAAF01 /* Bindable.swift */,
 				48CEAB40276A6F0F00DAAF01 /* Observable.swift */,
+				48BD630C276D01450052F80C /* FetchState.swift */,
 			);
 			path = Bindable;
 			sourceTree = "<group>";
@@ -593,6 +596,7 @@
 				48F3537D276BB97100EB8F05 /* DeleteCountUseCase.swift in Sources */,
 				4847D02D27666A0600D5158A /* +UIViewController.swift in Sources */,
 				48CEAB43276A7F5F00DAAF01 /* +String.swift in Sources */,
+				48BD630D276D01450052F80C /* FetchState.swift in Sources */,
 				4847D030276671E400D5158A /* MainCounterViewController.swift in Sources */,
 				350AF6ED25E0365A0000F698 /* UIImage+Badge.swift in Sources */,
 				48D3389E2763CC0200DDC3E0 /* Coordinator.swift in Sources */,

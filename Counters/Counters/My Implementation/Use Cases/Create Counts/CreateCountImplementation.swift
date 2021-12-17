@@ -7,22 +7,40 @@
 
 import Foundation
 
+enum CreateItemError: Error {
+    case noData
+    case invalidParse
+    case noText
+}
+
 struct CreateCountImplementation: CreateCountUseCase {
     
     let network: Networkable
+    let countsEnum: Counts = .create
     
     init(network: Networkable) {
         self.network = network
     }
     
-    func createCount(withTitle title: String, completion: @escaping (Result<[Count], Error>) -> ()) {
-        let counts = Counts.create(title: title)
-        network.dataRequest(counts.url(), httpMethod: counts.httpMethod, parameters: ["title": title]) { data, error in
-            if let error = error {
-                print(error.localizedDescription)
-            }
-            guard let data = data else { return }
-            print("there's data :)")
+    func createCount(withTitle title: String?, completion: @escaping (Result<[Count], Error>) -> ()) {
+        guard let title = title else {
+            completion(.failure(CreateItemError.noText))
+            return
         }
+        network.dataRequest(countsEnum.url(), httpMethod: countsEnum.httpMethod, parameters: ["title": title]) { data, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            guard let data = data else {
+                completion(.failure(CreateItemError.noData))
+                return
+            }
+            
+            if let counts = try? JSONDecoder().decode([Count].self, from: data) {
+                completion(.success(counts))
+                return
+            }
+        }.resume()
     }
 }

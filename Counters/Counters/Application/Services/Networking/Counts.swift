@@ -8,7 +8,7 @@
 import Foundation
 
 enum Counts {
-    case create(title: String)
+    case create
     case all
 }
 
@@ -18,7 +18,7 @@ extension Counts {
     var httpMethod: String {
         switch self {
         case .all: return "get"
-        case .create(_): return "post"
+        case .create: return "post"
         }
     }
     

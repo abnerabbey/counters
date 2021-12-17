@@ -16,7 +16,7 @@ protocol CreateItemInterface {
     var rightButtonTitle: String? { get }
 }
 
-struct CreateItemViewModel {
+class CreateItemViewModel {
     
     struct UIConfig: CreateItemInterface {
         var title: String?
@@ -27,5 +27,27 @@ struct CreateItemViewModel {
     }
     
     let uiConfig: CreateItemInterface
+    private let createItemUseCase: CreateCountUseCase
+    
+    var state: Observable<FetchState> = Observable(nil)
+    
+    init(uiConfig: CreateItemInterface, createItemUseCase: CreateCountUseCase) {
+        self.uiConfig = uiConfig
+        self.createItemUseCase = createItemUseCase
+    }
+    
+    func createCount(withTitle title: String?) {
+        state.onNext(.fetching)
+        createItemUseCase.createCount(withTitle: title) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let counts):
+                    self?.state.onNext(.success)
+                case.failure(let error):
+                    self?.state.onNext(.failure(error))
+                }
+            }
+        }
+    }
     
 }

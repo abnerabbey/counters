@@ -33,3 +33,12 @@
 "MAIN_VIEW_DESCRIPTION_TITLE_ERROR" = "Couldn't load the counters";
 "MAIN_VIEW_DESCRIPTION_DESC_ERROR" = "The Internet connection appears to be offline";
 "MAIN_VIEW_BUTTON_TITLE_ERROR" = "Retry";
+
+
+// MARK: - Create Item
+"CREATE_ITEM_TITLE" = "Create Count";
+"CREATE_ITEM_PLACEHOLDER" = "Type your count...";
+"CREATE_ITEM_LEFTBUTTON_TITLE" = "Cancel";
+"CREATE_ITEM_RIGHTBUTTON_TITLE" = "Save";
+
+
