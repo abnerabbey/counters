@@ -42,3 +42,8 @@
 "CREATE_ITEM_RIGHTBUTTON_TITLE" = "Save";
 
 
+// MARK: - ERRORS
+"ERROR_ALERT_DISMISS_BUTTON" = "Dismiss";
+"ERROR_ALERT_CREATEITEM_TITLE" = "Couldn't create the counter";
+
+

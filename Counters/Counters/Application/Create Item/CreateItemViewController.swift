@@ -72,7 +72,7 @@ extension CreateItemViewController {
                 self?.dismiss(animated: true, completion: nil)
             case .failure(let error):
                 self?.activityView.stopAnimating()
-                self?.showAlert(withMessage: error.localizedDescription)
+                self?.showAlert(withTitle: Localizables.ErrorAlertView.titleCreateItem.localized, message: error.localizedDescription)
             }
         })
     }
