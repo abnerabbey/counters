@@ -40,6 +40,8 @@ struct CreateCountImplementation: CreateCountUseCase {
             if let counts = try? JSONDecoder().decode([Count].self, from: data) {
                 completion(.success(counts))
                 return
+            } else {
+                completion(.failure(CreateItemError.invalidParse))
             }
         }.resume()
     }
