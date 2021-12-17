@@ -63,7 +63,12 @@ class MainCoordinator: Coordinator {
 //MARK: - MainCounterVC Navigation
 extension MainCoordinator: MainCounterViewNavigation {
     func navigate() {
-        let createItemVC = dependencyContainer.makeCreateItemViewController()
+        let createItemViewModel = dependencyContainer.makeCreateItemViewModel()
+        createItemViewModel.counterCreated.bind { count in
+            
+        }
+        let createItemVC = CreateItemViewController()
+        createItemVC.viewModel = createItemViewModel
         let nv = UINavigationController(rootViewController: createItemVC)
         nv.modalPresentationStyle = .fullScreen
         rootViewController.present(nv, animated: true, completion: nil)

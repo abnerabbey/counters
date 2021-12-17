@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol CreateItemViewControllerDelegate: AnyObject {
-    func didCreate(_ count: Count)
-}
-
 class CreateItemViewController: UIViewController {
     
     private lazy var textFieldView: UIView = create {
@@ -25,7 +21,6 @@ class CreateItemViewController: UIViewController {
     private lazy var activityView: UIActivityIndicatorView = UIActivityIndicatorView(style: .medium)
     
     var viewModel: CreateItemViewModel?
-    weak var delegate: CreateItemViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +60,6 @@ extension CreateItemViewController {
     
     private func binds() {
         bindFetchState()
-        bindCounterCreated()
     }
     
     private func bindFetchState() {
@@ -80,13 +74,6 @@ extension CreateItemViewController {
                 self?.activityView.stopAnimating()
                 self?.showAlert(withTitle: Localizables.ErrorAlertView.titleCreateItem.localized, message: error.localizedDescription)
             }
-        })
-    }
-    
-    private func bindCounterCreated() {
-        viewModel?.counterCreated.bind({ [weak self] count in
-            guard let count = count else { return }
-            self?.delegate?.didCreate(count)
         })
     }
 }
