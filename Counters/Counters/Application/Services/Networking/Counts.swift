@@ -17,14 +17,14 @@ extension Counts {
     
     var httpMethod: String {
         switch self {
-        case .all: return "get"
-        case .create: return "post"
+        case .all: return "GET"
+        case .create: return "POST"
         }
     }
     
     var endpoint: String {
         let baseURL = "http://127.0.0.1:3000"
-        return "\(baseURL)/api/v1/counters"
+        return "\(baseURL)/api/v1/counter"
     }
     
     func url() -> URL {

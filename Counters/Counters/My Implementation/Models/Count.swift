@@ -7,8 +7,12 @@
 
 import Foundation
 
+struct CountResult: Decodable {
+    let counts: [Count]
+}
+
 struct Count: Decodable {
-    let id: String
-    let title: String
-    let count: Int
+    let id: String?
+    let title: String?
+    let count: Int?
 }

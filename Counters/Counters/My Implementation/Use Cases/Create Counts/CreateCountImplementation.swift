@@ -23,7 +23,7 @@ struct CreateCountImplementation: CreateCountUseCase {
     }
     
     func createCount(withTitle title: String?, completion: @escaping (Result<[Count], Error>) -> ()) {
-        guard let title = title else {
+        guard let title = title, title.count > 0 else {
             completion(.failure(CreateItemError.noText))
             return
         }

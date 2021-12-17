@@ -40,7 +40,7 @@ typedef void (^DataCompletionHandler) (NSData * _Nullable data, NSError * _Nulla
             completion(nil, error);
             return;
         }
-        id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        id object = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
         if (error) {
             completion(nil, error);
             return;
