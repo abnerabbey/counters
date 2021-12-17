@@ -8,5 +8,5 @@
 import Foundation
 
 protocol CreateCountUseCase {
-    func createCount(withTitle title: String, completion: @escaping (Result<[Count], Error>) -> ())
+    func createCount(withTitle title: String?, completion: @escaping (Result<[Count], Error>) -> ())
 }

@@ -26,4 +26,16 @@ struct Localizables {
         static let buttonTitle = "MAIN_VIEW_BUTTON_TITLE_ERROR"
     }
     
+    struct CreateItemView {
+        static let title = "CREATE_ITEM_TITLE"
+        static let placeholder = "CREATE_ITEM_PLACEHOLDER"
+        static let leftButton = "CREATE_ITEM_LEFTBUTTON_TITLE"
+        static let rightButton = "CREATE_ITEM_RIGHTBUTTON_TITLE"
+    }
+    
+    struct ErrorAlertView {
+        static let dismiss = "ERROR_ALERT_DISMISS_BUTTON"
+        static let titleCreateItem = "ERROR_ALERT_CREATEITEM_TITLE"
+    }
+    
 }
