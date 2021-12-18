@@ -18,7 +18,7 @@ class MainResponseView: UIView {
         let title: String
         let description: String
         let buttonTitle: String
-        let action: (UIButton) -> ()
+        var action: ((UIButton) -> ())?
     }
     
     override init(frame: CGRect = .zero) {
@@ -47,8 +47,7 @@ class MainResponseView: UIView {
         titleLabel.text = viewModel.title
         descriptionLabel.text = viewModel.description
         actionButton.setTitle(viewModel.buttonTitle, for: .normal)
-        actionButton.addTarget(viewModel.action)
+        guard let action = viewModel.action else { return }
+        actionButton.addTarget(action)
     }
-    
-
 }

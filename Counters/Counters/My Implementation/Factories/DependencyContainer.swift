@@ -34,9 +34,13 @@ extension DependencyContainer: WelcomeViewFactory {
 }
 
 extension DependencyContainer: MainCounterViewFactory {
+    func makeGetCountersUseCase() -> GetCountUseCase {
+        return GetCountsUseCaseImplementation(network: makeNetworkLayer())
+    }
+    
     func makeMainCounterViewModel() -> MainCounterViewModel {
         let uiConfig = MainCounterViewModel.UIConfig(title: Localizables.MainView.title.localized, background: UIColor(named: "Background")!, leftButtonTitle: Localizables.MainView.main_edit_button.localized)
-        return MainCounterViewModel(uiConfig: uiConfig)
+        return MainCounterViewModel(uiConfig: uiConfig, getCountsUseCase: makeGetCountersUseCase())
     }
 }
 

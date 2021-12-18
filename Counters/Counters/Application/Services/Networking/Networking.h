@@ -17,12 +17,12 @@ typedef void (^DataCompletionHandler) (NSData * _Nullable data, NSError * _Nulla
 
 - (NSURLSessionTask *)jsonRequestURL:(NSURL *)url
                           HTTPMethod:(NSString *)method
-                          parameters:(NSDictionary<NSString*, NSString*>*)parameters
+                          parameters:(NSDictionary<NSString*, NSString*>* _Nullable)parameters
                    completionHandler:(JSONCompletionHandler)completion;
 
 - (NSURLSessionTask *)dataRequestURL:(NSURL *)url
                       HTTPMethod:(NSString *)method
-                      parameters:(NSDictionary<NSString*, NSString*>*)parameters
+                      parameters:(NSDictionary<NSString*, NSString*>* _Nullable)parameters
                    completionHandler:(DataCompletionHandler)completion;
 
 @end

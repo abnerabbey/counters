@@ -28,6 +28,7 @@
 		489019C12767C8EF00155A6C /* CreateItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489019C02767C8EF00155A6C /* CreateItemViewModel.swift */; };
 		489019C32767CC1E00155A6C /* CreateItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489019C22767CC1E00155A6C /* CreateItemViewModelTests.swift */; };
 		48BD630D276D01450052F80C /* FetchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BD630C276D01450052F80C /* FetchState.swift */; };
+		48BD630F276D44B80052F80C /* GetCountsUseCaseImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BD630E276D44B80052F80C /* GetCountsUseCaseImplementation.swift */; };
 		48CEAB3F276A6D6F00DAAF01 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CEAB3E276A6D6F00DAAF01 /* Bindable.swift */; };
 		48CEAB41276A6F0F00DAAF01 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CEAB40276A6F0F00DAAF01 /* Observable.swift */; };
 		48CEAB43276A7F5F00DAAF01 /* +String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CEAB42276A7F5F00DAAF01 /* +String.swift */; };
@@ -98,6 +99,7 @@
 		489019C02767C8EF00155A6C /* CreateItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemViewModel.swift; sourceTree = "<group>"; };
 		489019C22767CC1E00155A6C /* CreateItemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemViewModelTests.swift; sourceTree = "<group>"; };
 		48BD630C276D01450052F80C /* FetchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchState.swift; sourceTree = "<group>"; };
+		48BD630E276D44B80052F80C /* GetCountsUseCaseImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCountsUseCaseImplementation.swift; sourceTree = "<group>"; };
 		48CEAB3E276A6D6F00DAAF01 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		48CEAB40276A6F0F00DAAF01 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		48CEAB42276A7F5F00DAAF01 /* +String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+String.swift"; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				48F35373276BB5B000EB8F05 /* GetCountsUseCase.swift */,
+				48BD630E276D44B80052F80C /* GetCountsUseCaseImplementation.swift */,
 			);
 			path = "Get Counts";
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				48F35385276C191900EB8F05 /* Counts.swift in Sources */,
 				48F3537F276BBDCB00EB8F05 /* CountCell.swift in Sources */,
 				4838935327692BF900EEFEEA /* DefaultsImplementation.swift in Sources */,
+				48BD630F276D44B80052F80C /* GetCountsUseCaseImplementation.swift in Sources */,
 				48CEAB3F276A6D6F00DAAF01 /* Bindable.swift in Sources */,
 				48CEAB45276A7FEB00DAAF01 /* Localizables.swift in Sources */,
 				489019BF2767B6D500155A6C /* CreateItemViewController.swift in Sources */,
