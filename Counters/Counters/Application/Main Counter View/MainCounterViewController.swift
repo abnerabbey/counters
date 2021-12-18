@@ -11,7 +11,7 @@ public protocol MainCounterViewNavigation: AnyObject {
     func navigate()
 }
 
-class MainCounterViewController: UIViewController {
+class MainCounterViewController: UIViewController, UITableViewDelegate {
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     private lazy var searchController: UISearchController = {
@@ -37,6 +37,7 @@ class MainCounterViewController: UIViewController {
     private let mainView = MainResponseView()
     
     weak var delegate: MainCounterViewNavigation?
+    var tableDataSource: FeedTableDataSource<UITableViewCell>?
     
     init(factory: MainCounterViewFactory) {
         self.viewModel = factory.makeMainCounterViewModel()
@@ -58,7 +59,13 @@ class MainCounterViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
         tableView.register(CountCell.self, forCellReuseIdentifier: "countCell")
+        tableDataSource = FeedTableDataSource(cellIdentifier: "countCell", items: viewModel.count, configureCell: { [weak self] cell, indexPath in
+            guard let self = self, let cell = cell as? CountCell else { return }
+            cell.configure(withModel: self.viewModel[indexPath.row])
+        })
         tableView.separatorColor = .clear
+        tableView.dataSource = tableDataSource
+        tableView.delegate = self
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: viewModel.uiConfig.leftButtonTitle, style: .plain, target: self, action: nil)
         
@@ -70,13 +77,10 @@ class MainCounterViewController: UIViewController {
         
         view.addSubview(toolbar)
         toolbar.anchor(top: nil, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor)
-        
-        /*view.showViewFullScreen(mainView, bottomView: toolbar)
-        
-        
-        mainView.configue(withViewModel: .init(title: Localizables.MainViewActionEmpty.title.localized, description: Localizables.MainViewActionEmpty.description.localized, buttonTitle: Localizables.MainViewActionEmpty.buttonTitle.localized, action: { [weak self] button in
-            self?.delegate?.navigate()
-        }))*/
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
     
 }
@@ -109,9 +113,18 @@ extension MainCounterViewController {
                 self.isFetching(true)
             case .success:
                 self.isFetching(false)
-            case .failure(_):
+                self.tableDataSource?.items = self.viewModel.count
+                self.tableView.reloadData()
+            case .failure(let error):
                 self.isFetching(false)
-                self.setRetryMainView()
+                guard let error = error as? ViewModelError else {
+                    self.setRetryMainView()
+                    return
+                }
+                switch error {
+                case .empty:
+                    self.setNoContentView()
+                }
             }
         }
     }
@@ -138,7 +151,7 @@ extension MainCounterViewController {
     
     private func setNoContentView() {
         view.showViewFullScreen(mainView, bottomView: toolbar)
-        mainView.configue(withViewModel: .init(title: Localizables.MainViewActionEmpty.title.localized, description: Localizables.MainViewActionEmpty.description, buttonTitle: Localizables.MainViewActionEmpty.buttonTitle.localized, action: { [weak self] _ in
+        mainView.configue(withViewModel: .init(title: Localizables.MainViewActionEmpty.title.localized, description: Localizables.MainViewActionEmpty.description.localized, buttonTitle: Localizables.MainViewActionEmpty.buttonTitle.localized, action: { [weak self] _ in
             self?.delegate?.navigate()
         }))
     }

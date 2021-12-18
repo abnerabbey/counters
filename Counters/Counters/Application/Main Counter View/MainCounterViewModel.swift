@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
+enum ViewModelError: Error {
+    case empty
+}
+
 protocol MainCounterViewModelInterface {
     var title: String? { get }
     var background: UIColor? { get }
@@ -41,7 +45,11 @@ class MainCounterViewModel {
                 switch result {
                 case .success(let counters):
                     self?.counts = counters
-                    self?.fetchState.onNext(.success)
+                    if counters.count == 0 {
+                        self?.fetchState.onNext(.failure(ViewModelError.empty))
+                    } else {
+                        self?.fetchState.onNext(.success)
+                    }
                 case .failure(let error):
                     self?.fetchState.onNext(.failure(error))
                 }

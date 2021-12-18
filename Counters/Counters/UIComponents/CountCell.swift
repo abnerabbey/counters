@@ -26,6 +26,8 @@ class CountCell: UITableViewCell {
         setupView()
     }
     
+    private var model: Count?
+    
     private func setupView() {
         backgroundColor = UIColor(named: "Background")
         addSubview(containerView)
@@ -43,6 +45,12 @@ class CountCell: UITableViewCell {
         separatorView.anchor(top: containerView.topAnchor, leading: countLabel.trailingAnchor, trailing: nil, bottom: containerView.bottomAnchor, padding: UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 0), size: CGSize(width: 3, height: 0))
         titleLabel.anchor(top: countLabel.topAnchor, leading: separatorView.trailingAnchor, trailing: containerView.trailingAnchor, bottom: nil, padding: UIEdgeInsets(top: 6, left: 8, bottom: 0, right: 4))
         segmentedControl.anchor(top: nil, leading: nil, trailing: containerView.trailingAnchor, bottom: containerView.bottomAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 8), size: CGSize(width: 110, height: segmentedControl.frame.height + 3))
+    }
+    
+    func configure(withModel model: Count) {
+        self.model = model
+        titleLabel.text = model.title
+        countLabel.text = "\(model.count ?? 0)"
     }
     
 
