@@ -57,7 +57,11 @@ typedef void (^DataCompletionHandler) (NSData * _Nullable data, NSError * _Nulla
     __auto_type *request = [[NSMutableURLRequest alloc] initWithURL:url];
     request.HTTPMethod = method;
     
-    NSData *JSONData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
+    NSData *JSONData;
+    if (parameters) {
+        JSONData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
+    }
+    
     if (JSONData) {
         request.HTTPBody = JSONData;
         [request setValue:JSONContentType forHTTPHeaderField:ContentType];

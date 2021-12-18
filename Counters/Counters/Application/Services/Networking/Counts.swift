@@ -24,7 +24,13 @@ extension Counts {
     
     var endpoint: String {
         let baseURL = "http://127.0.0.1:3000"
-        return "\(baseURL)/api/v1/counter"
+        switch self {
+        case .create:
+            return "\(baseURL)/api/v1/counter"
+        case .all:
+            return "\(baseURL)/api/v1/counters"
+        }
+        
     }
     
     func url() -> URL {

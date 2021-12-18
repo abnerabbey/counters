@@ -13,8 +13,12 @@ protocol WelcomeViewFactory {
     func makeWelcomeViewController() -> WelcomeViewController
 }
 
+protocol MainViewControllerFactory {
+    func makeMainViewController() -> UIViewController
+}
+
 protocol MainCounterViewFactory {
-    //func makeMainCounterViewController() -> MainCounterViewController
+    func makeGetCountersUseCase() -> GetCountUseCase
     func makeMainCounterViewModel() -> MainCounterViewModel
 }
 
@@ -34,7 +38,7 @@ protocol CreateItemViewControllerFactory {
 }
 
 protocol CreateItemViewModelFactory {
-    func makeCreateItemViewController() -> UIViewController
     func makeCreateItemUseCase() -> CreateCountUseCase
     func makeCreateItemViewModel() -> CreateItemViewModel
 }
+
