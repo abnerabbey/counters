@@ -103,6 +103,7 @@ extension MainCounterViewController {
     
     private func binds() {
         bindFetchState()
+        bindCounterCreation()
     }
     
     private func bindFetchState() {
@@ -113,8 +114,7 @@ extension MainCounterViewController {
                 self.isFetching(true)
             case .success:
                 self.isFetching(false)
-                self.tableDataSource?.items = self.viewModel.count
-                self.tableView.reloadData()
+                self.reloadTableView()
             case .failure(let error):
                 self.isFetching(false)
                 guard let error = error as? ViewModelError else {
@@ -129,11 +129,23 @@ extension MainCounterViewController {
         }
     }
     
+    private func bindCounterCreation() {
+        viewModel.createdNewCounter.bind { [weak self] _ in
+            self?.reloadTableView()
+            self?.isFetching(false)
+        }
+    }
+    
     
 }
 
 // MARK: - Helper Functions
 extension MainCounterViewController {
+    
+    private func reloadTableView() {
+        self.tableDataSource?.items = self.viewModel.count
+        self.tableView.reloadData()
+    }
     
     private func isFetching(_ fetching: Bool) {
         view.removeSubview(mainView)

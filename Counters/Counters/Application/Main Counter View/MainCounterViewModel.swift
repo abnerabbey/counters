@@ -31,6 +31,7 @@ class MainCounterViewModel {
     
     private var counts: [Count] = []
     
+    var createdNewCounter: Observable<Bool> = Observable(false)
     var fetchState: Observable<FetchState> = Observable(nil)
     
     init(uiConfig: MainCounterViewModelInterface, getCountsUseCase: GetCountUseCase) {
@@ -55,6 +56,11 @@ class MainCounterViewModel {
                 }
             }
         }
+    }
+    
+    func didAddNewCounter(_ counter: Count) {
+        counts.insert(counter, at: 0)
+        createdNewCounter.onNext(true)
     }
     
     
