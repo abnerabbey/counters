@@ -22,3 +22,20 @@ extension UILabel {
         return label
     }
 }
+
+extension UIButton {
+    
+    struct Config {
+        let title: String
+        let font: UIFont
+        let textColor: UIColor
+    }
+    
+    static func withConfig(_ config: UIButton.Config) -> UIButton {
+        let button = UIButton(type: .system)
+        button.setTitle(config.title, for: .normal)
+        button.titleLabel?.font = config.font
+        button.tintColor = config.textColor
+        return button
+    }
+}
