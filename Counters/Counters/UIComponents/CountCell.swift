@@ -31,6 +31,8 @@ class CountCell: UITableViewCell {
         return stackView
     }()
     
+    var buttonAction: ((ChangeActionType?) -> ())?
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupView()
@@ -52,6 +54,10 @@ class CountCell: UITableViewCell {
         countLabel.textAlignment = .right
         plusButton.setTitle("+", for: .normal)
         minusButton.setTitle("-", for: .normal)
+        plusButton.tag = ChangeActionType.increment.rawValue
+        minusButton.tag = ChangeActionType.decrement.rawValue
+        plusButton.addTarget(self, action: #selector(actionButton(_:)), for: .touchUpInside)
+        minusButton.addTarget(self, action: #selector(actionButton(_:)), for: .touchUpInside)
         
         containerView.anchor(top: topAnchor, leading: leadingAnchor, trailing: trailingAnchor, bottom: bottomAnchor, padding: UIEdgeInsets(top: 4, left: 12, bottom: 4, right: 12))
         countLabel.anchor(top: containerView.topAnchor, leading: containerView.leadingAnchor, trailing: nil, bottom: nil, padding: UIEdgeInsets(top: 8, left: 4, bottom: 0, right: 0), size: CGSize(width: 50, height: 0))
@@ -67,5 +73,8 @@ class CountCell: UITableViewCell {
         countLabel.textColor = vm.color
     }
     
+    @objc private func actionButton(_ sender: UIButton) {
+        buttonAction?(ChangeActionType(rawValue: sender.tag))
+    }
 
 }

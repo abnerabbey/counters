@@ -10,6 +10,8 @@ import Foundation
 enum Counts {
     case create
     case all
+    case increment
+    case decrement
 }
 
 extension Counts {
@@ -18,7 +20,7 @@ extension Counts {
     var httpMethod: String {
         switch self {
         case .all: return "GET"
-        case .create: return "POST"
+        case .create, .increment, .decrement: return "POST"
         }
     }
     
@@ -29,6 +31,10 @@ extension Counts {
             return "\(baseURL)/api/v1/counter"
         case .all:
             return "\(baseURL)/api/v1/counters"
+        case .increment:
+            return "\(baseURL)/api/v1/counter/inc"
+        case .decrement:
+            return "\(baseURL)/api/v1/counter/dec"
         }
         
     }

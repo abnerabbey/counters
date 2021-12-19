@@ -21,6 +21,7 @@ class MainCounterViewController: UIViewController, UITableViewDelegate {
         return searchController
     }()
     
+    private lazy var refreshControl: UIRefreshControl = UIRefreshControl()
     private lazy var tableView: UITableView = create {
         $0.backgroundColor = viewModel.uiConfig.background
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -58,12 +59,17 @@ class MainCounterViewController: UIViewController, UITableViewDelegate {
         view.backgroundColor = viewModel.uiConfig.background
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
+        refreshControl.addTarget(self, action: #selector(retryOperations), for: .valueChanged)
         tableView.register(CountCell.self, forCellReuseIdentifier: "countCell")
         tableDataSource = FeedTableDataSource(cellIdentifier: "countCell", items: viewModel.count, configureCell: { [weak self] cell, indexPath in
             guard let self = self, let cell = cell as? CountCell else { return }
             cell.configure(withViewModel: self.viewModel[indexPath.row])
+            cell.buttonAction = { [weak self, indexPath] changeType in
+                self?.viewModel.performCounterOperation(withType: changeType, indexPath: indexPath)
+            }
         })
         tableView.separatorColor = .clear
+        tableView.refreshControl = refreshControl
         tableView.dataSource = tableDataSource
         tableView.delegate = self
         
@@ -104,6 +110,8 @@ extension MainCounterViewController {
     private func binds() {
         bindFetchState()
         bindCounterCreation()
+        bindUpdateCounter()
+        bindError()
     }
     
     private func bindFetchState() {
@@ -136,6 +144,18 @@ extension MainCounterViewController {
         }
     }
     
+    private func bindUpdateCounter() {
+        viewModel.updatedCounter.bind { [weak self] _ in
+            self?.reloadTableView()
+        }
+    }
+    
+    private func bindError() {
+        viewModel.error.bind { [weak self] error in
+            self?.showAlert(withTitle: error, message: Localizables.MainViewActionError.description.localized)
+        }
+    }
+    
     
 }
 
@@ -150,7 +170,10 @@ extension MainCounterViewController {
     private func isFetching(_ fetching: Bool) {
         view.removeSubview(mainView)
         if fetching { activityIndicator.startAnimating() }
-        else { activityIndicator.stopAnimating() }
+        else {
+            refreshControl.endRefreshing()
+            activityIndicator.stopAnimating()
+        }
         tableView.isHidden = fetching
     }
     
