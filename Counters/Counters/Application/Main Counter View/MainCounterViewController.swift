@@ -61,7 +61,7 @@ class MainCounterViewController: UIViewController, UITableViewDelegate {
         tableView.register(CountCell.self, forCellReuseIdentifier: "countCell")
         tableDataSource = FeedTableDataSource(cellIdentifier: "countCell", items: viewModel.count, configureCell: { [weak self] cell, indexPath in
             guard let self = self, let cell = cell as? CountCell else { return }
-            cell.configure(withModel: self.viewModel[indexPath.row])
+            cell.configure(withViewModel: self.viewModel[indexPath.row])
         })
         tableView.separatorColor = .clear
         tableView.dataSource = tableDataSource

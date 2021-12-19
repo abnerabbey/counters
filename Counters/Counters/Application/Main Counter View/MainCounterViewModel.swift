@@ -68,13 +68,13 @@ class MainCounterViewModel {
 
 protocol CountersViewModelInterface {
     var count: Int { get }
-    subscript(index: Int) -> Count { get }
+    subscript(index: Int) -> CounterViewModel { get }
 }
 
 extension MainCounterViewModel: CountersViewModelInterface {
     var count: Int { counts.count }
-    subscript(index: Int) -> Count {
-        counts[index]
+    subscript(index: Int) -> CounterViewModel {
+        CounterViewModel(model: counts[index])
     }
 }
 

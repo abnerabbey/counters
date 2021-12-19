@@ -36,7 +36,7 @@ class CountCell: UITableViewCell {
         setupView()
     }
     
-    private var model: Count?
+    private var vm: CounterViewModel?
     
     private func setupView() {
         backgroundColor = UIColor(named: "Background")
@@ -60,10 +60,11 @@ class CountCell: UITableViewCell {
         stackButtons.anchor(top: nil, leading: nil, trailing: containerView.trailingAnchor, bottom: containerView.bottomAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 8), size: CGSize(width: 110, height: 44))
     }
     
-    func configure(withModel model: Count) {
-        self.model = model
-        titleLabel.text = model.title
-        countLabel.text = "\(model.count ?? 0)"
+    func configure(withViewModel vm: CounterViewModel) {
+        self.vm = vm
+        titleLabel.text = vm.title
+        countLabel.text = vm.count
+        countLabel.textColor = vm.color
     }
     
 
