@@ -32,8 +32,8 @@ struct GetCountsUseCaseImplementation: GetCountUseCase {
                 return
             }
             
-            if let counts = try? JSONDecoder().decode([Count].self, from: data) {
-                completion(.success(counts))
+            if var counts = try? JSONDecoder().decode([Count].self, from: data) {
+                completion(.success(counts.reversed()))
                 return
             } else {
                 completion(.failure(CreateItemError.invalidParse))

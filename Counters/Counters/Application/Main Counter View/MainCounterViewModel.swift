@@ -28,14 +28,19 @@ class MainCounterViewModel {
     
     let uiConfig: MainCounterViewModelInterface
     private let getCountsUseCase: GetCountUseCase
+    private let changeCountUseCase: ChangeCountUseCase
     
     private var counts: [Count] = []
     
+    var createdNewCounter: Observable<Bool> = Observable(false)
     var fetchState: Observable<FetchState> = Observable(nil)
+    var error: Observable<String> = Observable(nil)
+    var updatedCounter: Observable<Bool> = Observable(false)
     
-    init(uiConfig: MainCounterViewModelInterface, getCountsUseCase: GetCountUseCase) {
+    init(uiConfig: MainCounterViewModelInterface, getCountsUseCase: GetCountUseCase, changeCountUseCase: ChangeCountUseCase) {
         self.uiConfig = uiConfig
         self.getCountsUseCase = getCountsUseCase
+        self.changeCountUseCase = changeCountUseCase
     }
     
     func getCounters() {
@@ -57,18 +62,54 @@ class MainCounterViewModel {
         }
     }
     
+    func didAddNewCounter(_ counter: Count) {
+        counts.insert(counter, at: 0)
+        createdNewCounter.onNext(true)
+    }
     
+    func performCounterOperation(withType type: ChangeActionType?, indexPath: IndexPath) {
+        guard let type = type else { fatalError("invalid change type") }
+        let count = counts[indexPath.row]
+        guard let counting = count.count, let id = count.id else { return }
+        switch type {
+        case .increment:
+            changeCountUseCase.incrementCount(withID: id) { [weak self] result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let counts):
+                        self?.counts = counts
+                        self?.updatedCounter.onNext(true)
+                    case .failure(_):
+                        self?.error.onNext("Couldn't update the \(count.title ?? "") to \(counting + 1)")
+                    }
+                }
+            }
+        case .decrement:
+            guard counting > 0 else { return }
+            changeCountUseCase.decrementCount(withID: id) { [weak self] result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let counts):
+                        self?.counts = counts
+                        self?.updatedCounter.onNext(true)
+                    case .failure(_):
+                        self?.error.onNext("Couldn't update the \(count.title ?? "") to \(counting + 1)")
+                    }
+                }
+            }
+        }
+    }
 }
 
 protocol CountersViewModelInterface {
     var count: Int { get }
-    subscript(index: Int) -> Count { get }
+    subscript(index: Int) -> CounterViewModel { get }
 }
 
 extension MainCounterViewModel: CountersViewModelInterface {
     var count: Int { counts.count }
-    subscript(index: Int) -> Count {
-        counts[index]
+    subscript(index: Int) -> CounterViewModel {
+        CounterViewModel(model: counts[index])
     }
 }
 

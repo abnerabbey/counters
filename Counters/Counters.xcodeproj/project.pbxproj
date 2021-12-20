@@ -23,6 +23,8 @@
 		4847D03C27669D7600D5158A /* +UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847D03B27669D7600D5158A /* +UIView.swift */; };
 		4847D03E27669FA800D5158A /* MainResponseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847D03D27669FA800D5158A /* MainResponseView.swift */; };
 		4847D0402766A26E00D5158A /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847D03F2766A26E00D5158A /* ViewFactory.swift */; };
+		4859BCE7276FA23700896380 /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4859BCE6276FA23700896380 /* CounterViewModel.swift */; };
+		4859BCE9276FBFCB00896380 /* ChangeUseCaseImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4859BCE8276FBFCB00896380 /* ChangeUseCaseImplementation.swift */; };
 		489019BD2767B65E00155A6C /* CreateItemViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489019BC2767B65E00155A6C /* CreateItemViewControllerTests.swift */; };
 		489019BF2767B6D500155A6C /* CreateItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489019BE2767B6D500155A6C /* CreateItemViewController.swift */; };
 		489019C12767C8EF00155A6C /* CreateItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489019C02767C8EF00155A6C /* CreateItemViewModel.swift */; };
@@ -95,6 +97,8 @@
 		4847D03B27669D7600D5158A /* +UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+UIView.swift"; sourceTree = "<group>"; };
 		4847D03D27669FA800D5158A /* MainResponseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainResponseView.swift; sourceTree = "<group>"; };
 		4847D03F2766A26E00D5158A /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
+		4859BCE6276FA23700896380 /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
+		4859BCE8276FBFCB00896380 /* ChangeUseCaseImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUseCaseImplementation.swift; sourceTree = "<group>"; };
 		489019BC2767B65E00155A6C /* CreateItemViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemViewControllerTests.swift; sourceTree = "<group>"; };
 		489019BE2767B6D500155A6C /* CreateItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemViewController.swift; sourceTree = "<group>"; };
 		489019C02767C8EF00155A6C /* CreateItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemViewModel.swift; sourceTree = "<group>"; };
@@ -225,6 +229,7 @@
 			children = (
 				4847D02F276671E400D5158A /* MainCounterViewController.swift */,
 				4847D0312766724F00D5158A /* MainCounterViewModel.swift */,
+				4859BCE6276FA23700896380 /* CounterViewModel.swift */,
 				4847D03D27669FA800D5158A /* MainResponseView.swift */,
 			);
 			path = "Main Counter View";
@@ -311,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				48F35378276BB72000EB8F05 /* ChangeCountUseCase.swift */,
+				4859BCE8276FBFCB00896380 /* ChangeUseCaseImplementation.swift */,
 			);
 			path = "Change Counts";
 			sourceTree = "<group>";
@@ -594,6 +600,7 @@
 				48F35370276BB4E700EB8F05 /* CountCreation.swift in Sources */,
 				48F35385276C191900EB8F05 /* Counts.swift in Sources */,
 				48F3537F276BBDCB00EB8F05 /* CountCell.swift in Sources */,
+				4859BCE7276FA23700896380 /* CounterViewModel.swift in Sources */,
 				4838935327692BF900EEFEEA /* DefaultsImplementation.swift in Sources */,
 				48BD630F276D44B80052F80C /* GetCountsUseCaseImplementation.swift in Sources */,
 				48CEAB3F276A6D6F00DAAF01 /* Bindable.swift in Sources */,
@@ -613,6 +620,7 @@
 				48CEAB41276A6F0F00DAAF01 /* Observable.swift in Sources */,
 				DECA256C25CC8D4200851431 /* AppDelegate.swift in Sources */,
 				48D338A22763CCD900DDC3E0 /* MainCoordinator.swift in Sources */,
+				4859BCE9276FBFCB00896380 /* ChangeUseCaseImplementation.swift in Sources */,
 				48F35383276C142500EB8F05 /* CreateCountImplementation.swift in Sources */,
 				48F35374276BB5B000EB8F05 /* GetCountsUseCase.swift in Sources */,
 				4847D0322766724F00D5158A /* MainCounterViewModel.swift in Sources */,

@@ -40,7 +40,7 @@ extension DependencyContainer: MainCounterViewFactory {
     
     func makeMainCounterViewModel() -> MainCounterViewModel {
         let uiConfig = MainCounterViewModel.UIConfig(title: Localizables.MainView.title.localized, background: UIColor(named: "Background")!, leftButtonTitle: Localizables.MainView.main_edit_button.localized)
-        return MainCounterViewModel(uiConfig: uiConfig, getCountsUseCase: makeGetCountersUseCase())
+        return MainCounterViewModel(uiConfig: uiConfig, getCountsUseCase: makeGetCountersUseCase(), changeCountUseCase: ChangeUseCaseImplementation(network: makeNetworkLayer()))
     }
 }
 

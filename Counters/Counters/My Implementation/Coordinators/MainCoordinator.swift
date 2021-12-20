@@ -64,8 +64,9 @@ class MainCoordinator: Coordinator {
 extension MainCoordinator: MainCounterViewNavigation {
     func navigate() {
         let createItemViewModel = dependencyContainer.makeCreateItemViewModel()
-        createItemViewModel.counterCreated.bind { count in
-            
+        createItemViewModel.counterCreated.bind { [weak self] count in
+            guard let count = count, let mainNV = self?.rootViewController.children[0] as? UINavigationController, let mainVC = mainNV.children[0] as? MainCounterViewController else { return }
+            mainVC.viewModel.didAddNewCounter(count)
         }
         let createItemVC = CreateItemViewController()
         createItemVC.viewModel = createItemViewModel
