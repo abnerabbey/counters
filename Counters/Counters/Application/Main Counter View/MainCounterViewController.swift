@@ -18,6 +18,7 @@ class MainCounterViewController: UIViewController, UITableViewDelegate {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.hidesNavigationBarDuringPresentation = true
         searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
         return searchController
     }()
     
@@ -100,6 +101,15 @@ extension MainCounterViewController {
     
     @objc private func retryOperations() {
         viewModel.getCounters()
+    }
+    
+}
+
+// MARK: - SearchBar delegate
+extension MainCounterViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.search(withText: searchText)
     }
     
 }
