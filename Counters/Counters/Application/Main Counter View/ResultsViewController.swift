@@ -26,7 +26,7 @@ class ResultsViewController: UITableViewController {
         
         view.addSubview(noResultsLabel)
         noResultsLabel.centerAnchors(centerX: view.centerXAnchor, centerY: nil)
-        noResultsLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor, bottom: nil, padding: UIEdgeInsets(top: 200, left: 16, bottom: 0, right: 16), size: CGSize(width: 0, height: 40))
+        noResultsLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor, bottom: nil, padding: UIEdgeInsets(top: 100, left: 16, bottom: 0, right: 16), size: CGSize(width: 0, height: 40))
         noResultsLabel.textAlignment = .center
         noResultsLabel.text = "No results"
         noResultsLabel.isHidden = true
