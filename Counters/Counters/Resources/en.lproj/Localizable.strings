@@ -20,3 +20,30 @@
 "WELCOME_COUNT_FEATURE_DESCRIPTION" = "Possibilities are literally endless.";
 
 "WELCOME_PRIMARY_ACTION_TITLE" = "Continue";
+
+// MARK: - Main Counter View
+"MAIN_EDIT_BUTTON" = "Edit";
+
+// MARK: - Main View Action Empty
+"MAIN_VIEW_DESCRIPTION_TITLE_EMPTY" = "No counters yet";
+"MAIN_VIEW_DESCRIPTION_DESC_EMPTY" = "When I started counting my blessings, my whole life turned around. --Willie Nelson";
+"MAIN_VIEW_BUTTON_TITLE_EMPTY" = "Create a counter";
+
+// MARK: - Main View Action Loading Error
+"MAIN_VIEW_DESCRIPTION_TITLE_ERROR" = "Couldn't load the counters";
+"MAIN_VIEW_DESCRIPTION_DESC_ERROR" = "The Internet connection appears to be offline";
+"MAIN_VIEW_BUTTON_TITLE_ERROR" = "Retry";
+
+
+// MARK: - Create Item
+"CREATE_ITEM_TITLE" = "Create Count";
+"CREATE_ITEM_PLACEHOLDER" = "Type your count...";
+"CREATE_ITEM_LEFTBUTTON_TITLE" = "Cancel";
+"CREATE_ITEM_RIGHTBUTTON_TITLE" = "Save";
+
+
+// MARK: - ERRORS
+"ERROR_ALERT_DISMISS_BUTTON" = "Dismiss";
+"ERROR_ALERT_CREATEITEM_TITLE" = "Couldn't create the counter";
+
+

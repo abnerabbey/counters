@@ -19,6 +19,8 @@ final class Button: UIButton {
             super.isHighlighted = newValue
         }
     }
+    
+    private var action: ((UIButton) -> ())?
 
     // MARK: - Initialization
 
@@ -42,6 +44,15 @@ final class Button: UIButton {
             return super.setTitle(nil, for: state)
         }
         setAttributedTitle(.init(string: title, attributes: [.kern: Font.kern]), for: state)
+    }
+    
+    func addTarget(_ action: @escaping (UIButton) -> ()) {
+        self.action = action
+        addTarget(self, action: #selector(executeAction(_:)), for: .touchUpInside)
+    }
+    
+    @objc private func executeAction(_ sender: UIButton) {
+        action?(sender)
     }
 }
 

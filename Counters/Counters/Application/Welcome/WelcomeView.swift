@@ -21,7 +21,7 @@ internal final class WelcomeView: UIView {
     private let titleLabel = UILabel()
     private let subtitleLabel = UILabel()
     private let stackView = UIStackView()
-    private let button = Button()
+    let button = Button()
 
     // MARK: - Initialization
     
