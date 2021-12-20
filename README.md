@@ -6,6 +6,9 @@ Counters is a beautiful app that allows you to have the counts of whatever you w
 
 Install the app directly on you iPhone and start using it without any third party dependency! 🚀
 
+Use it either portrait mode or landscape mode 🙂🙃🙂
+
+
 ### Counters list
 
 Explore and have the counters control right on the counter list, where you can see all counts you have created.
