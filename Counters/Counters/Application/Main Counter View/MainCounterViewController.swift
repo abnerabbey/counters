@@ -35,6 +35,10 @@ class MainCounterViewController: UIViewController, UITableViewDelegate {
     
     private lazy var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView(style: .large)
     
+    private struct Constants {
+        static let counteCellID = "countCell"
+    }
+    
     let viewModel: MainCounterViewModel
     private let mainView = MainResponseView()
     
@@ -63,8 +67,8 @@ class MainCounterViewController: UIViewController, UITableViewDelegate {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
         refreshControl.addTarget(self, action: #selector(retryOperations), for: .valueChanged)
-        tableView.register(CountCell.self, forCellReuseIdentifier: "countCell")
-        tableDataSource = FeedTableDataSource(cellIdentifier: "countCell", items: viewModel.count, configureCell: { [weak self] cell, indexPath in
+        tableView.register(CountCell.self, forCellReuseIdentifier: Constants.counteCellID)
+        tableDataSource = FeedTableDataSource(cellIdentifier: Constants.counteCellID, items: viewModel.count, configureCell: { [weak self] cell, indexPath in
             guard let self = self, let cell = cell as? CountCell else { return }
             cell.configure(withViewModel: self.viewModel[indexPath.row])
             cell.buttonAction = { [weak self, indexPath] changeType in
@@ -76,7 +80,7 @@ class MainCounterViewController: UIViewController, UITableViewDelegate {
         tableView.dataSource = tableDataSource
         tableView.delegate = self
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: viewModel.uiConfig.leftButtonTitle, style: .plain, target: self, action: nil)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: viewModel.uiConfig.leftButtonTitle, style: .plain, target: self, action: #selector(edit))
         
         view.addSubview(activityIndicator)
         activityIndicator.centerAnchors(centerX: view.centerXAnchor, centerY: view.centerYAnchor)
@@ -103,6 +107,11 @@ extension MainCounterViewController {
     
     @objc private func retryOperations() {
         viewModel.getCounters()
+    }
+    
+    // TODO
+    @objc private func edit() {
+        showAlert(withTitle: "Counters", message: "Coming soon...")
     }
     
 }
