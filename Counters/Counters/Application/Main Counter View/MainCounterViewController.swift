@@ -15,9 +15,10 @@ class MainCounterViewController: UIViewController, UITableViewDelegate {
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     private lazy var searchController: UISearchController = {
-        let searchController = UISearchController(searchResultsController: nil)
+        let searchController = UISearchController(searchResultsController: resultsViewController)
         searchController.hidesNavigationBarDuringPresentation = true
         searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
         return searchController
     }()
     
@@ -39,9 +40,11 @@ class MainCounterViewController: UIViewController, UITableViewDelegate {
     
     weak var delegate: MainCounterViewNavigation?
     var tableDataSource: FeedTableDataSource<UITableViewCell>?
+    var resultsViewController: UIViewController
     
     init(factory: MainCounterViewFactory) {
         self.viewModel = factory.makeMainCounterViewModel()
+        self.resultsViewController = factory.makeResultsViewController()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -104,6 +107,19 @@ extension MainCounterViewController {
     
 }
 
+// MARK: - SearchBar delegate
+extension MainCounterViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.search(withText: searchText)
+    }
+    
+}
+
 // MARK: - Binding objects
 extension MainCounterViewController {
     
@@ -112,6 +128,7 @@ extension MainCounterViewController {
         bindCounterCreation()
         bindUpdateCounter()
         bindError()
+        bindFilters()
     }
     
     private func bindFetchState() {
@@ -153,6 +170,15 @@ extension MainCounterViewController {
     private func bindError() {
         viewModel.error.bind { [weak self] error in
             self?.showAlert(withTitle: error, message: Localizables.MainViewActionError.description.localized)
+        }
+    }
+    
+    private func bindFilters() {
+        viewModel.filtered.bind { [weak self] filtered in
+            guard let self = self, let resultsVC = self.searchController.searchResultsController as? ResultsViewController, let filtered = filtered else { return }
+            resultsVC.viewModel?.filtered = filtered
+            resultsVC.tableView.reloadData()
+            resultsVC.viewModel?.resultsHiddien.onNext(filtered.count != 0)
         }
     }
     

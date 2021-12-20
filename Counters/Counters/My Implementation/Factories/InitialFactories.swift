@@ -20,6 +20,7 @@ protocol MainViewControllerFactory {
 protocol MainCounterViewFactory {
     func makeGetCountersUseCase() -> GetCountUseCase
     func makeMainCounterViewModel() -> MainCounterViewModel
+    func makeResultsViewController() -> UIViewController
 }
 
 protocol StorageRepositoryFactory {

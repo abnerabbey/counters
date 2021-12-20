@@ -31,6 +31,7 @@ class MainCounterViewModel {
     private let changeCountUseCase: ChangeCountUseCase
     
     private var counts: [Count] = []
+    var filtered: Observable<[Count]> = Observable([])
     
     var createdNewCounter: Observable<Bool> = Observable(false)
     var fetchState: Observable<FetchState> = Observable(nil)
@@ -98,6 +99,11 @@ class MainCounterViewModel {
                 }
             }
         }
+    }
+    
+    func search(withText text: String) {
+        filtered.onNext(counts.filter { $0.title!.replacingOccurrences(of: " ", with: "").lowercased().contains(text.replacingOccurrences(of: " ", with: "").lowercased()) })
+        
     }
 }
 

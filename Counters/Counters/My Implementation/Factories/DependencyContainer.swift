@@ -42,6 +42,12 @@ extension DependencyContainer: MainCounterViewFactory {
         let uiConfig = MainCounterViewModel.UIConfig(title: Localizables.MainView.title.localized, background: UIColor(named: "Background")!, leftButtonTitle: Localizables.MainView.main_edit_button.localized)
         return MainCounterViewModel(uiConfig: uiConfig, getCountsUseCase: makeGetCountersUseCase(), changeCountUseCase: ChangeUseCaseImplementation(network: makeNetworkLayer()))
     }
+    
+    func makeResultsViewController() -> UIViewController {
+        let resultsVC = ResultsViewController()
+        resultsVC.viewModel = .init()
+        return resultsVC
+    }
 }
 
 // MARK: - Networkable Factories
