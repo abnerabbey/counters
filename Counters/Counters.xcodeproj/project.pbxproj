@@ -42,6 +42,8 @@
 		48D338A02763CC9300DDC3E0 /* MainCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D3389F2763CC9300DDC3E0 /* MainCoordinatorTests.swift */; };
 		48D338A22763CCD900DDC3E0 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D338A12763CCD900DDC3E0 /* MainCoordinator.swift */; };
 		48D338A42763DEB700DDC3E0 /* InitialFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D338A32763DEB700DDC3E0 /* InitialFactories.swift */; };
+		48E529542770FDB6003393B3 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E529532770FDB6003393B3 /* ResultsViewController.swift */; };
+		48E5295627710480003393B3 /* ResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E5295527710480003393B3 /* ResultsViewModel.swift */; };
 		48F3536E276BB45800EB8F05 /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F3536D276BB45800EB8F05 /* Count.swift */; };
 		48F35370276BB4E700EB8F05 /* CountCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F3536F276BB4E700EB8F05 /* CountCreation.swift */; };
 		48F35374276BB5B000EB8F05 /* GetCountsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F35373276BB5B000EB8F05 /* GetCountsUseCase.swift */; };
@@ -116,6 +118,8 @@
 		48D3389F2763CC9300DDC3E0 /* MainCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorTests.swift; sourceTree = "<group>"; };
 		48D338A12763CCD900DDC3E0 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		48D338A32763DEB700DDC3E0 /* InitialFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialFactories.swift; sourceTree = "<group>"; };
+		48E529532770FDB6003393B3 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		48E5295527710480003393B3 /* ResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewModel.swift; sourceTree = "<group>"; };
 		48F3536D276BB45800EB8F05 /* Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count.swift; sourceTree = "<group>"; };
 		48F3536F276BB4E700EB8F05 /* CountCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountCreation.swift; sourceTree = "<group>"; };
 		48F35373276BB5B000EB8F05 /* GetCountsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCountsUseCase.swift; sourceTree = "<group>"; };
@@ -231,6 +235,8 @@
 				4847D0312766724F00D5158A /* MainCounterViewModel.swift */,
 				4859BCE6276FA23700896380 /* CounterViewModel.swift */,
 				4847D03D27669FA800D5158A /* MainResponseView.swift */,
+				48E529532770FDB6003393B3 /* ResultsViewController.swift */,
+				48E5295527710480003393B3 /* ResultsViewModel.swift */,
 			);
 			path = "Main Counter View";
 			sourceTree = "<group>";
@@ -600,6 +606,7 @@
 				48F35370276BB4E700EB8F05 /* CountCreation.swift in Sources */,
 				48F35385276C191900EB8F05 /* Counts.swift in Sources */,
 				48F3537F276BBDCB00EB8F05 /* CountCell.swift in Sources */,
+				48E5295627710480003393B3 /* ResultsViewModel.swift in Sources */,
 				4859BCE7276FA23700896380 /* CounterViewModel.swift in Sources */,
 				4838935327692BF900EEFEEA /* DefaultsImplementation.swift in Sources */,
 				48BD630F276D44B80052F80C /* GetCountsUseCaseImplementation.swift in Sources */,
@@ -612,6 +619,7 @@
 				48CEAB43276A7F5F00DAAF01 /* +String.swift in Sources */,
 				48BD630D276D01450052F80C /* FetchState.swift in Sources */,
 				4847D030276671E400D5158A /* MainCounterViewController.swift in Sources */,
+				48E529542770FDB6003393B3 /* ResultsViewController.swift in Sources */,
 				350AF6ED25E0365A0000F698 /* UIImage+Badge.swift in Sources */,
 				48D3389E2763CC0200DDC3E0 /* Coordinator.swift in Sources */,
 				48F3536E276BB45800EB8F05 /* Count.swift in Sources */,
