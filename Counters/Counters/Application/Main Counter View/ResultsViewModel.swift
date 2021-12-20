@@ -11,6 +11,8 @@ struct ResultsViewModel: CountersViewModelInterface {
     
     var filtered: [Count] = []
     
+    var resultsHiddien: Observable<Bool> = Observable(true)
+    
     var count: Int { filtered.count }
     
     subscript(index: Int) -> CounterViewModel {

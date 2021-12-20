@@ -22,6 +22,7 @@ class ResultsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Constants.backgroundColor
+        bindResultsHidden()
         
         view.addSubview(noResultsLabel)
         noResultsLabel.centerAnchors(centerX: view.centerXAnchor, centerY: nil)
@@ -52,8 +53,14 @@ class ResultsViewController: UITableViewController {
 
 }
 
+// MARK: - Binds
 extension ResultsViewController {
     
-    
+    private func bindResultsHidden() {
+        viewModel?.resultsHiddien.bind({ [weak self] hidden in
+            guard let hidden = hidden else { return }
+            self?.noResultsLabel.isHidden = hidden
+        })
+    }
     
 }

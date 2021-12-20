@@ -178,6 +178,7 @@ extension MainCounterViewController {
             guard let self = self, let resultsVC = self.searchController.searchResultsController as? ResultsViewController, let filtered = filtered else { return }
             resultsVC.viewModel?.filtered = filtered
             resultsVC.tableView.reloadData()
+            resultsVC.viewModel?.resultsHiddien.onNext(filtered.count != 0)
         }
     }
     
