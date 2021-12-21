@@ -61,7 +61,7 @@ The stable released version are on master branch. You can directly install on th
 
 Due my development times I saw some practices I could have included, but I would definetely include on conditions with more time and are the following:
 
-- More unit tests (My current development includes testable elements using protocols, dependency injection by initializers and properties, add them wouldn't require more effort on refactoring)
+- More unit tests (My current development includes testable elements using protocols, dependency injection by initializers and properties, add them wouldn't require more effort on refactoring). All existing test passing ✅
 
 - Constants structs/enums to have more control on identifiers, strings, static numbers like constants constraints
 
