@@ -14,6 +14,10 @@ class CountersStub {
         return Count(id: "H77283d", title: "I'm a new counter", count: 0)
     }
     
+    class func getCountWithCount() -> Count {
+        return Count(id: "H77283d", title: "I'm a new counter", count: 10)
+    }
+    
     class func getCounts() -> [Count] {
         return [Count(id: "72387y", title: "One", count: 0),
                 Count(id: "7823h", title: "Two", count: 0),
