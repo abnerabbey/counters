@@ -7,8 +7,19 @@
 
 import Foundation
 
-enum FetchState {
+enum FetchState: Equatable {
     case fetching
     case success
     case failure(Error)
+}
+
+extension FetchState {
+    static func == (lhs: FetchState, rhs: FetchState) -> Bool {
+        switch (lhs, rhs) {
+        case let (.failure(a), .failure(b)):
+            return protocol_isEqual(a as? Protocol, b as? Protocol)
+        default:
+            return true
+        }
+    }
 }
